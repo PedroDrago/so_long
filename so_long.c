@@ -6,21 +6,33 @@
 /*   By: pdrago <pdrago@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 05:00:04 by pdrago            #+#    #+#             */
-/*   Updated: 2023/11/21 05:02:29 by pdrago           ###   ########.fr       */
+/*   Updated: 2023/11/21 15:00:13 by pdrago           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
-#include "minilibx/mlx.h"
 
-int main(void)
+typedef struct	s_data {
+	void	*img;
+	char	*addr;
+	int		bits_per_pixel;
+	int		line_length;
+	int		endian;
+}				t_data;
+
+int	main(void)
 {
 	void	*mlx;
-	void	*mlx_window;
+	t_data	img;
 
 	mlx = mlx_init();
-	mlx_window = mlx_new_window(mlx, 1920, 1080, "so_long");
-	mlx_loop(mlx_window);
+	img.img = mlx_new_image(mlx, 1920, 1080);
 
-	return (0);
+	/*
+	** After creating an image, we can call `mlx_get_data_addr`, we pass
+	** `bits_per_pixel`, `line_length`, and `endian` by reference. These will
+	** then be set accordingly for the *current* data address.
+	*/
+	img.addr = mlx_get_data_addr(img.img, &img.bits_per_pixel, &img.line_length,
+								&img.endian);
 }
