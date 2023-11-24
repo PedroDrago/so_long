@@ -1,0 +1,1 @@
+ccf so_long.c minilibx-linux/libmlx_Linux.a -lX11 -lXext
