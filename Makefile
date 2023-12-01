@@ -6,14 +6,14 @@
 #    By: pdrago <pdrago@student.42.rio>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/21 14:53:51 by pdrago            #+#    #+#              #
-#    Updated: 2023/11/30 23:54:16 by pdrago           ###   ########.fr        #
+#    Updated: 2023/12/01 00:55:49 by pdrago           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME=so_long
 FLAGS=-Wall -Wextra -Werror
 SRCDIR = src
-SRC= src/so_long.c src/hooks.c src/utils/ft_printf.c
+SRC= src/so_long.c src/hooks.c src/map.c
 LIBFT=libft/libft.a
 
 all: $(NAME)

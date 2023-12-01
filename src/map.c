@@ -75,6 +75,8 @@ int validate_argv(int argc, char *argv[])
 	char	*map_file;
 	char	**map;
 	int	error;
+
+	return (TRUE);
 	if (argc != 2)
 		return (error_message(WRONG_ARGUMENTS, argc, argv));
 	map_file = argv[1];
