@@ -9,6 +9,15 @@ t_image	new_sprite(t_program *vars, char *path)
 	sprite.position.x = 0;
 	sprite.position.y = 0;
 	sprite.path = path;
+	sprite.border.up = sprite.position.y - sprite.size.y / 2;
+	sprite.border.down = sprite.position.y + sprite.size.y / 2;
+	sprite.border.right = sprite.position.x + sprite.size.x / 2;
+	sprite.border.left = sprite.position.x - sprite.size.x / 2;
+	//think better about this border system, idk if its necessary, but maybe will help
+	//when uptading position border should always update too
+	//Better make function update_position(t_program *game) and update_border(t_program *game);
+	//This border calculation is suposed to point to the outter most pixel of each side, indicating when character would be out of bound with precision
+	//but if we're going to make a tile game, this wont be necessary
 	return (sprite);
 }
 

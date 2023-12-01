@@ -6,7 +6,7 @@
 /*   By: pdrago <pdrago@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 23:42:49 by pdrago            #+#    #+#             */
-/*   Updated: 2023/11/30 23:42:51 by pdrago           ###   ########.fr       */
+/*   Updated: 2023/12/01 02:31:57 by pdrago           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,13 @@ typedef struct s_coord
 	int	y;
 }	t_coord;
 
+typedef struct s_border
+{
+	int	up;
+	int	left;
+	int	down;
+	int	right;
+}	t_border;
 
 typedef struct s_image
 {
@@ -26,6 +33,7 @@ typedef struct s_image
 	int	line_length;
 	int	endian;
 	t_coord size;
+	t_border border;
 	t_coord position;
 }	t_image;
 
