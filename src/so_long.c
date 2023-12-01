@@ -97,7 +97,11 @@ int	main(int argc, char *argv[])
 	t_program	game;
 
 	if (!validate_argv(argc, argv))
-		exit(0);
+		exit(-1);
+	game.map = generate_map(argv[1]);
+	if (!validate_map(&game.map, argc, argv))
+		exit(-1);
+	print_map_status(&game.map);
 	game.mlx = mlx_init();
 	game.background = new_sprite(&game, "./assets/basic/background.xpm");
 	game.win = mlx_new_window(game.mlx, game.background.size.x, game.background.size.y, "So Long");

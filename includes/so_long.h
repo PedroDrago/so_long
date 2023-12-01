@@ -6,7 +6,7 @@
 /*   By: pdrago <pdrago@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 04:56:20 by pdrago            #+#    #+#             */
-/*   Updated: 2023/12/01 00:55:24 by pdrago           ###   ########.fr       */
+/*   Updated: 2023/12/01 11:09:11 by pdrago           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,12 @@
 #include "structs.h"
 #include "../libft/libft.h"
 
+int	check_middle_rows(t_map *map);
+int	check_surrounded(t_map *map);
+int	check_border_rows(t_map *map);
+int	check_path(t_map *map);
 int	key_hook(int key, t_program *game);
+int	get_map_size(char *map_file);
 int validate_argv(int argc, char *argv[]);
 t_image	new_sprite(t_program *vars, char *path);
 t_image copy_sprite(t_program *game, t_image old);
@@ -35,11 +40,10 @@ void	change_to_attack(t_character *character);
 void	change_to_idle(t_character *character);
 void	resolve_movement(int key, t_program *game);
 void	set_character_images(t_program *game);
-int validate_argv(int argc, char *argv[]);
-int	check_path(); //check if map has valid path
-int	check_surrounded(); // check if map is surrounded by walls
-int	check_rectangular(); // check if map is rectangular
+int validate_map(t_map *map, int argc, char *argv[]);
+int	check_rectangular(t_map *map);
 int	error_message(int error, int argc, char *argv[]);
-char	**generate_map_array(char *map_file);
+t_map	generate_map(char *map_file);
 int	check_map_characters(char *map[]);
+void	print_map_status(t_map *map);
 #endif
