@@ -1,70 +1,4 @@
-#include "so_long.h"
-#include "minilibx/mlx.h"
-#include <stdio.h>
-#include <unistd.h>
-
-enum {
-	ON_KEYDOWN = 2,
-	ON_KEYUP = 3,
-	ON_MOUSEDOWN = 4,
-	ON_MOUSEUP = 5,
-	ON_MOUSEMOVE = 6,
-	ON_EXPOSE = 12,
-	ON_DESTROY = 17,
-
-
-
-	ENTER = 65293,
-	ESC = 65307,
-	SPACE= 32,
-	TAB = 65289,
-	W = 119,
-	A = 97,
-	S = 115,
-	D = 100,
-	ARROW_UP = 65362,
-	ARROW_DOWN = 65364,
-	ARROW_RIGHT = 65363,
-	ARROW_LEFT = 65361,
-};
-
-typedef struct s_coord
-{
-	int	x;
-	int	y;
-}	t_coord;
-
-
-typedef struct s_image
-{
-	void	*img;
-	char	*addr;
-	t_coord size;
-	int	bits_per_pixel;
-	int	line_length;
-	int	endian;
-	t_coord position;
-	char	*path;
-}	t_image;
-
-typedef struct s_character
-{
-	t_image idle;
-	t_image attacking;
-	t_image current;
-	unsigned int	movement_count;
-}	t_character;
-
-typedef struct s_program
-{
-	void *mlx;
-	void *win;
-	t_character character;
-	t_image background;
-	int	x;
-	int	y;
-}	t_program;
-
+#include "../includes/so_long.h"
 
 t_image	new_sprite(t_program *vars, char *path)
 {
@@ -138,20 +72,7 @@ void	resolve_movement(int key, t_program *game)
 		if (pos_x + size_x <= game->background.size.x)
 			game->character.current.position.x += game->character.current.size.x;
 	}
-	printf("movement count: %u\n", game->character.movement_count += 1);
-}
-int	key_hook(int key, t_program *game)
-{
-	if (key == ESC)
-		exit(0);
-	else if (key == W || key == A || key == S || key == D)
-		resolve_movement(key, game);
-	else if (key == SPACE)
-		change_to_attack(&game->character);
-	render_frame(game);
-	printf("character x: %i\n", game->character.idle.position.x);
-	printf("character y: %i\n", game->character.idle.position.y);
-	return (0);
+	ft_printf("movement count: %u\n", game->character.movement_count += 1);
 }
 
 void	set_character_images(t_program *game)
@@ -162,12 +83,12 @@ void	set_character_images(t_program *game)
 	game->character.movement_count = 0;
 }
 
-int	main(void)
+int	main(int argc, char *argv[])
 {
 	t_program	game;
-	t_image character_sprite;
-	t_image	background;
 
+	if (!validate_argv(argc, argv))
+		exit(0);
 	game.mlx = mlx_init();
 	game.background = new_sprite(&game, "./assets/basic/background.xpm");
 	game.win = mlx_new_window(game.mlx, game.background.size.x, game.background.size.y, "So Long");
