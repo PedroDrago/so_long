@@ -1,6 +1,7 @@
 
 #include "../includes/so_long.h"
 #include <fcntl.h>
+#include <unistd.h>
 
 int validate_map(t_map *map, int argc, char *argv[])
 {
@@ -34,10 +35,12 @@ int	check_map_characters(char *map[])
 	int	column;
 	int	entrances;
 	int	exits;
+	int	collectibles;
 
 	entrances = 0;
 	exits = 0;
 	row = -1;
+	collectibles = 0;
 	while (map[++row])
 	{
 		column = -1;
@@ -49,9 +52,11 @@ int	check_map_characters(char *map[])
 				entrances++;
 			else if (map[row][column] == EXIT)
 				exits++;
+			else if  (map[row][column] == COLLECTIBLE)
+				collectibles++;
 		}
 	}
-	if (entrances != 1 || exits != 1)
+	if (entrances != 1 || exits != 1 || collectibles < 1)
 		return (FALSE);
 	return (TRUE);
 }
@@ -68,6 +73,7 @@ int	get_map_size(char *map_file)
 	{	
 		count++;
 	}
+	close(fd);
 	return (count);
 }
 
@@ -96,6 +102,8 @@ t_map	generate_map(char *map_file)
 	}
 	array[count] = NULL;
 	map.array = array;
+	set_collectibles_number(&map);
+	close(fd);
 	return (map);
 }
 
@@ -103,20 +111,38 @@ int	error_message(int error, int argc, char *argv[])
 {
 	//may be all these printf must be print errors somehow
 	if (error == WRONG_ARGUMENTS)
-		ft_printf("%s was expecting 2, but got %i arguments.\n", argv[0], argc);
+		ft_printf("Error\n%s was expecting 2, but got %i arguments.\n", argv[0], argc);
 	else if (error == WRONG_FILE_EXTENSION)
-		ft_printf("Map %s has invalid extesion. %s was expecting a .ber file.\n", argv[0], argv[1]);
+		ft_printf("Error\nMap %s has invalid extesion. %s was expecting a .ber file.\n", argv[1], argv[0] + 2);
 	else if (error == INVALID_CHARACTERS)
-		ft_printf("The map has invalid characters.\n");
+		ft_printf("Error\nThe map has invalid characters.\n");
 	else if (error == MAP_NOT_RECTANGULAR)
-		ft_printf("The map must be rectangular.\n");
+		ft_printf("Error\nThe map must be rectangular.\n");
 	else if (error == MAP_NOT_FOUND)
-		ft_printf("The map % was not found. Check if the path is right.\n", argv[1]);
+		ft_printf("Error\nThe map % was not found. Check if the path is right.\n", argv[1]);
 	else if (error == MAP_NOT_SURROUNDED)
-		ft_printf("The map must be surrounded by walls.\n");
+		ft_printf("Error\nThe map must be surrounded by walls.\n");
 	else if (error == NO_VALID_PATH)
-		ft_printf("The map %s has no valid path for winning.\n", argv[1]);
+		ft_printf("Error\nThe map %s has no valid path for winning.\n", argv[1]);
 	return (FALSE);
+}
+
+void	set_collectibles_number(t_map *map)
+{
+	int	row;
+	int	column;
+
+	row = -1;
+	map->collectibles_number = 0;
+	while (map->array[++row])
+	{
+		column = -1;
+		while (map->array[row][++column])
+		{
+			if (map->array[row][column] == COLLECTIBLE)
+				map->collectibles_number++;
+		}
+	}
 }
 
 int	check_rectangular(t_map *map)
@@ -211,5 +237,6 @@ void	print_map_status(t_map *map)
 	}
 	ft_printf("Array x: %i\n", map->array_size.x);
 	ft_printf("Array y: %i\n", map->array_size.y);
+	ft_printf("Collectibles: %i\n", map->collectibles_number);
 }
 

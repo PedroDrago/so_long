@@ -82,14 +82,16 @@ void	resolve_movement(int key, t_program *game)
 			game->character.current.position.x += game->character.current.size.x;
 	}
 	ft_printf("movement count: %u\n", game->character.movement_count += 1);
+	ft_printf("Collectible count: %u/%u\n", game->character.collectibles_count, game->map.collectibles_number);
 }
 
-void	set_character_images(t_program *game)
+void	set_character(t_program *game)
 {
 	game->character.idle = new_sprite(game, "./assets/basic/parado.xpm");
 	game->character.attacking = new_sprite(game, "./assets/basic/attacking.xpm");
 	game->character.current = game->character.idle;
 	game->character.movement_count = 0;
+	game->character.collectibles_count= 0;
 }
 
 int	main(int argc, char *argv[])
@@ -100,13 +102,16 @@ int	main(int argc, char *argv[])
 		exit(-1);
 	game.map = generate_map(argv[1]);
 	if (!validate_map(&game.map, argc, argv))
+	{
+		free(game.map.array);
 		exit(-1);
+	}
 	print_map_status(&game.map);
 	game.mlx = mlx_init();
-	game.background = new_sprite(&game, "./assets/basic/background.xpm");
-	game.win = mlx_new_window(game.mlx, game.background.size.x, game.background.size.y, "So Long");
+	game.background = new_sprite(&game, "./assets/basic/floor.xpm");
+	game.win = mlx_new_window(game.mlx, 1280, 720, "So Long");
 	mlx_key_hook(game.win, key_hook, &game);
-	set_character_images(&game);
+	set_character(&game);
 	render_frame(&game);
 	mlx_loop(game.mlx);
 }

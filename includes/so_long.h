@@ -6,7 +6,7 @@
 /*   By: pdrago <pdrago@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 04:56:20 by pdrago            #+#    #+#             */
-/*   Updated: 2023/12/01 11:09:11 by pdrago           ###   ########.fr       */
+/*   Updated: 2023/12/01 11:52:16 by pdrago           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,8 @@ void	render_frame(t_program *game);
 void	change_to_attack(t_character *character);
 void	change_to_idle(t_character *character);
 void	resolve_movement(int key, t_program *game);
-void	set_character_images(t_program *game);
+void	set_character(t_program *game);
+void	set_collectibles_number(t_map *map);
 int validate_map(t_map *map, int argc, char *argv[]);
 int	check_rectangular(t_map *map);
 int	error_message(int error, int argc, char *argv[]);

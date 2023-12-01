@@ -6,7 +6,7 @@
 /*   By: pdrago <pdrago@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 23:42:49 by pdrago            #+#    #+#             */
-/*   Updated: 2023/12/01 09:47:06 by pdrago           ###   ########.fr       */
+/*   Updated: 2023/12/01 11:56:28 by pdrago           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,12 +44,14 @@ typedef struct s_character
 	t_image current;
 	t_coord array_indexes;
 	unsigned int	movement_count;
+	unsigned int	collectibles_count;
 }	t_character;
 
 typedef struct s_map
 {
 	char	**array;
 	t_coord	array_size;
+	int	collectibles_number;
 }	t_map;
 
 typedef struct s_program
