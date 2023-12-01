@@ -9,7 +9,7 @@ int	key_hook(int key, t_program *game)
 	else if (key == SPACE)
 		change_to_attack(&game->character);
 	render_frame(game);
-	ft_printf("character x: %i\n", game->character.idle.position.x);
-	ft_printf("character y: %i\n", game->character.idle.position.y);
+	// ft_printf("character x: %i\n", game->character.idle.position.x);
+	// ft_printf("character y: %i\n", game->character.idle.position.y);
 	return (0);
 }
