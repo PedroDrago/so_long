@@ -6,7 +6,7 @@
 #    By: pdrago <pdrago@student.42.rio>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/17 19:50:18 by pdrago            #+#    #+#              #
-#    Updated: 2023/11/30 01:25:49 by pdrago           ###   ########.fr        #
+#    Updated: 2023/12/01 01:11:38 by pdrago           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,27 +19,32 @@ OBJ = $(SRC:.c=.o)
 BONUS_OBJ = $(BONUS_SRC:.c=.o)
 GNL_OBJ = $(GNL_SRC:.c=.o)
 
+RED=\e[31m
+GREEN=\e[32m
+ENDCOLOR=\e[0m
+
 all: full
 
 full: $(OBJ) $(BONUS_OBJ) $(GNL_OBJ)
-	ar -rc $(NAME) $(OBJ) $(BONUS_OBJ) $(GNL_OBJ)
+	@ar -rc $(NAME) $(OBJ) $(BONUS_OBJ) $(GNL_OBJ)
+	@echo "$(GREEN)finished compiling libft$(ENDCOLOR)"
 
 $(NAME): $(OBJ)
-	 ar -rc $(NAME) $(OBJ)
+	 @ar -rc $(NAME) $(OBJ)
 
 bonus: $(OBJ) $(BONUS_OBJ)
-	 ar -rc $(NAME) $(OBJ) $(BONUS_OBJ)
+	@ar -rc $(NAME) $(OBJ) $(BONUS_OBJ)
 
 gnl: $(OBJ) $(GNL_OBJ)
-	ar -rc $(NAME) $(OBJ) $(GNL_OBJ)
+	@ar -rc $(NAME) $(OBJ) $(GNL_OBJ)
 
 .c.o:
-	cc $(FLAGS) -c $< -o $@
+	@cc $(FLAGS) -c $< -o $@
 
 clean:
-	rm -f $(OBJ) $(BONUS_OBJ) $(GNL_OBJ) a.out
+	@rm -f $(OBJ) $(BONUS_OBJ) $(GNL_OBJ) a.out
 
 fclean: clean
-	rm -f $(NAME)
+	@rm -f $(NAME)
 
 re: fclean all
