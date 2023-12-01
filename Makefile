@@ -6,7 +6,7 @@
 #    By: pdrago <pdrago@student.42.rio>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/21 14:53:51 by pdrago            #+#    #+#              #
-#    Updated: 2023/12/01 11:12:00 by pdrago           ###   ########.fr        #
+#    Updated: 2023/12/01 14:48:06 by pdrago           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,12 +28,12 @@ $(NAME): $(SRC) $(LIBFT)
 
 debug: $(SRC)
 	@cc -g $(SRC) $(LIBFT) minilibx/libmlx_Linux.a -lX11 -lXext -o $(NAME)
-	# @echo "$(GREEN)Entering lldb for so_long debugging:$(ENDCOLOR)"
-	# @lldb ./$(NAME) $(MAP)
+	@echo "$(GREEN)Entering lldb for so_long debugging:$(ENDCOLOR)"
+	@lldb ./$(NAME) $(MAP)
 
 exec: $(NAME)
 	@echo "$(GREEN)Executing so_long:$(ENDCOLOR)"
-	@./$(NAME)
+	@./$(NAME) $(MAP)
 
 $(LIBFT):
 	@cd libft && make
