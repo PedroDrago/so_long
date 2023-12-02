@@ -1,4 +1,3 @@
-
 #include "../includes/so_long.h"
 #include <fcntl.h>
 #include <unistd.h>
