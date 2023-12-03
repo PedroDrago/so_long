@@ -6,14 +6,14 @@
 #    By: pdrago <pdrago@student.42.rio>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/21 14:53:51 by pdrago            #+#    #+#              #
-#    Updated: 2023/12/01 14:48:06 by pdrago           ###   ########.fr        #
+#    Updated: 2023/12/03 06:21:08 by pdrago           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME=so_long
 FLAGS=-Wall -Wextra -Werror
 SRCDIR = src
-SRC= src/so_long.c src/hooks.c src/map.c
+SRC= src/*.c
 LIBFT=libft/libft.a
 RED=\e[31m
 GREEN=\e[32m

@@ -42,3 +42,12 @@
 
 ### Art Sources
 - Font: https://opengameart.org/content/sharp-retro-font
+
+### Frog
+- Linces: https://creativecommons.org/publicdomain/zero/1.0/
+- Artist: https://twitter.com/PixelFrogStudio
+
+### Ninja pack
+- Linces: https://creativecommons.org/publicdomain/zero/1.0/
+- Artist: https://twitter.com/2Pblog1 and https://www.instagram.com/challenger.aaa/?hl=fr
+- Patreon: https://www.patreon.com/pixelarchipel
