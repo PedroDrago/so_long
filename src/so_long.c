@@ -1,5 +1,4 @@
 #include "../includes/so_long.h"
-
 t_image	new_sprite(t_program *vars, char *path)
 {
 	t_image sprite;
@@ -9,77 +8,161 @@ t_image	new_sprite(t_program *vars, char *path)
 	sprite.position.x = 0;
 	sprite.position.y = 0;
 	sprite.path = path;
-	sprite.border.up = sprite.position.y - sprite.size.y / 2;
-	sprite.border.down = sprite.position.y + sprite.size.y / 2;
-	sprite.border.right = sprite.position.x + sprite.size.x / 2;
-	sprite.border.left = sprite.position.x - sprite.size.x / 2;
-	//think better about this border system, idk if its necessary, but maybe will help
-	//when uptading position border should always update too
-	//Better make function update_position(t_program *game) and update_border(t_program *game);
-	//This border calculation is suposed to point to the outter most pixel of each side, indicating when character would be out of bound with precision
-	//but if we're going to make a tile game, this wont be necessary
 	return (sprite);
 }
 
-t_image copy_sprite(t_program *game, t_image old)
-{
-	t_image new;
 
-	new = new_sprite(game, old.path);
-	new.position.x = old.position.x;
-	new.position.y = old.position.y;
-	return (new);
+void	change_to_up(t_character *character)
+{
+	character->current = character->up;
 }
 
-void	render_frame(t_program *game)
+void	change_to_up_door(t_character *character)
 {
-	// update_positions(); -> this function will set all character images to the same position as current
-	mlx_put_image_to_window(game->mlx, game->win, game->background.img, game->background.position.x, game->background.position.y);
-	mlx_put_image_to_window(game->mlx, game->win, game->character.current.img, game->character.current.position.x, game->character.current.position.y);
+	character->current = character->up_door;
+}
+void	change_to_down(t_character *character)
+{
+	character->current = character->down;
 }
 
-void	change_to_attack(t_character *character)
+void	change_to_down_door(t_character *character)
 {
-	character->attacking.position = character->current.position;
-	character->current = character->attacking;
+	character->current = character->down_door;
 }
 
-void	change_to_idle(t_character *character)
+void	change_to_left_door(t_character *character)
 {
-	character->idle.position = character->current.position;
-	character->current = character->idle;
+	character->current = character->left_door;
+}
+
+void	change_to_left(t_character *character)
+{
+	character->current = character->left;
+}
+
+void	change_to_right(t_character *character)
+{
+	character->current = character->right;
+}
+
+void	change_to_right_door(t_character *character)
+{
+	character->current = character->right_door;
+}
+
+void	move_up(t_map *map, t_character *player)
+{
+	int	current_x;
+	int	current_y;
+
+	current_x = map->player_position.x;
+	current_y = map->player_position.y;
+	if (map->array[map->player_position.y - 1][map->player_position.x] != '1')
+	{
+		if (map->array[current_y - 1][current_x] == COLLECTIBLE)
+			player->collectibles_count++;
+		map->array[current_y - 1][current_x] = PLAYER;
+		if (current_y == map->exit_position.y && current_x == map->exit_position.x)
+			map->array[current_y][current_x] = EXIT;
+		else
+			map->array[current_y][current_x] = EMPTY;
+		map->player_position.y--;
+		if (current_y - 1 == map->exit_position.y && current_x == map->exit_position.x)
+			change_to_up_door(player);
+		else
+			change_to_up(player);
+	}
+}
+
+void	move_left(t_map *map, t_character *player)
+{
+	int	current_x;
+	int	current_y;
+
+	current_x = map->player_position.x;
+	current_y = map->player_position.y;
+	if (map->array[current_y][current_x - 1] != '1')
+	{
+		if (map->array[current_y][current_x - 1] == COLLECTIBLE)
+			player->collectibles_count++;
+		map->array[current_y][current_x - 1] = PLAYER;
+		if (current_y == map->exit_position.y && current_x == map->exit_position.x)
+			map->array[current_y][current_x] = EXIT;
+		else
+			map->array[current_y][current_x] = EMPTY;
+		map->player_position.x--;
+		if (current_y == map->exit_position.y && current_x + 1== map->exit_position.x)
+			change_to_left_door(player);
+		else
+			change_to_left(player);
+	}
+}
+
+void	move_down(t_map *map, t_character *player)
+{
+	int	current_x;
+	int	current_y;
+
+	current_x = map->player_position.x;
+	current_y = map->player_position.y;
+	if (map->array[map->player_position.y + 1][map->player_position.x] != '1')
+	{
+		if (map->array[current_y + 1][current_x] == COLLECTIBLE)
+			player->collectibles_count++;
+		map->array[current_y + 1][current_x] = PLAYER;
+		if (current_y == map->exit_position.y && current_x == map->exit_position.x)
+			map->array[current_y][current_x] = EXIT;
+		else
+			map->array[current_y][current_x] = EMPTY;
+		map->player_position.y++;
+		if (current_y + 1 == map->exit_position.y && current_x == map->exit_position.x)
+			change_to_down_door(player);
+		else
+			change_to_down(player);
+	}
+}
+
+void	move_right(t_map *map, t_character *player)
+{
+	int	current_x;
+	int	current_y;
+
+	current_x = map->player_position.x;
+	current_y = map->player_position.y;
+	if (map->array[map->player_position.y][map->player_position.x + 1] != '1')
+	{
+		if (map->array[current_y][current_x + 1] == COLLECTIBLE)
+			player->collectibles_count++;
+		map->array[current_y][current_x + 1] = PLAYER;
+		if (current_y == map->exit_position.y && current_x == map->exit_position.x)
+			map->array[current_y][current_x] = EXIT;
+		else
+			map->array[current_y][current_x] = EMPTY;
+		map->player_position.x++;
+		if (current_y == map->exit_position.y && current_x + 1== map->exit_position.x)
+			change_to_right_door(player);
+		else
+			change_to_right(player);
+	}
 }
 void	resolve_movement(int key, t_program *game)
 {
-	int pos_x;
-	int pos_y;
-	int size_x;
-	int size_y;
-
-	pos_x = game->character.current.position.x;
-	pos_y = game->character.current.position.y;
-	size_x = game->character.current.size.x;
-	size_y = game->character.current.size.y;
-	change_to_idle(&game->character);
 	if (key == W)
 	{
-		if (pos_y - size_y >= 0)
-			game->character.current.position.y -= game->character.current.size.y;
+		move_up(&game->map, &game->character);
 	}
 	else if (key == A)
 	{
-		if (pos_x - size_x >= 0)
-			game->character.current.position.x -= game->character.current.size.x;
+		move_left(&game->map, &game->character);
 	}
 	else if (key == S)
 	{
-		if (pos_y + size_y <= game->background.size.y)
-			game->character.current.position.y += game->character.current.size.y;
+		move_down(&game->map, &game->character);
 	}
 	else if (key == D)
 	{
-		if (pos_x + size_x <= game->background.size.x)
-			game->character.current.position.x += game->character.current.size.x;
+		move_right(&game->map, &game->character);
 	}
 	ft_printf("movement count: %u\n", game->character.movement_count += 1);
 	ft_printf("Collectible count: %u/%u\n", game->character.collectibles_count, game->map.collectibles_number);
@@ -87,11 +170,84 @@ void	resolve_movement(int key, t_program *game)
 
 void	set_character(t_program *game)
 {
-	game->character.idle = new_sprite(game, "./assets/basic/parado.xpm");
-	game->character.attacking = new_sprite(game, "./assets/basic/attacking.xpm");
-	game->character.current = game->character.idle;
+	game->character.down = new_sprite(game, FROG_DOWN_PATH);
+	game->character.down_door = new_sprite(game, FROG_DOWN_DOOR_PATH);
+	game->character.up = new_sprite(game, FROG_UP_PATH);
+	game->character.up_door = new_sprite(game, FROG_UP_DOOR_PATH);
+	game->character.left = new_sprite(game, FROG_LEFT_PATH);
+	game->character.left_door = new_sprite(game, FROG_LEFT_DOOR_PATH);
+	game->character.right = new_sprite(game, FROG_RIGHT_PATH);
+	game->character.right_door = new_sprite(game, FROG_RIGHT_DOOR_PATH);
+	game->character.current = game->character.down;
 	game->character.movement_count = 0;
 	game->character.collectibles_count= 0;
+	game->character.array_position.x = 0;
+	game->character.array_position.y = 0;
+}
+
+void	set_sprites(t_program *game)
+{
+	game->exit.closed = new_sprite(game, EXIT_CLOSED_PATH);
+	game->exit.open = new_sprite(game, EXIT_OPEN_PATH);
+	game->exit.current = game->exit.closed;
+	game->collectible = new_sprite(game, COLLECTIBLE_PATH);
+	game->background = new_sprite(game, BACKGROUND_PATH);
+	game->victory = new_sprite(game, VICTORY_PATH);
+	game->wall = new_sprite(game, WALL_PATH);
+	set_character(game);
+}
+
+void	render_tile(t_program *game, char object, t_coord pos)
+{
+	if (object == EMPTY)
+		mlx_put_image_to_window(game->mlx, game->win, game->background.img, pos.x, pos.y);
+	else if (object == WALL)
+		mlx_put_image_to_window(game->mlx, game->win, game->wall.img, pos.x, pos.y);
+	else if (object == COLLECTIBLE)
+		mlx_put_image_to_window(game->mlx, game->win, game->collectible.img, pos.x, pos.y);
+	else if (object == EXIT)
+	{
+		mlx_put_image_to_window(game->mlx, game->win, game->exit.current.img, pos.x, pos.y);
+		game->exit_position_pixel.x = pos.x;
+		game->exit_position_pixel.y = pos.y;
+	}
+	else if (object == ENTRANCE || object == PLAYER)
+	{
+		mlx_put_image_to_window(game->mlx, game->win, game->character.current.img, pos.x, pos.y);
+		game->character.current.position.x = pos.x;
+		game->character.current.position.y = pos.y;
+	}
+}
+
+void	render_map(t_program *game)
+{
+	int	row;
+	int	column;
+	t_coord	pos;
+
+	row = 0;
+	pos.x = 0;
+	pos.y = 0;
+	while(game->map.array[row])
+	{
+		column = 0;
+		pos.x = 0;
+		while(game->map.array[row][column])
+		{
+			render_tile(game, game->map.array[row][column], pos);
+			column++;
+			pos.x += TILE_SIZE;
+		}
+		row++;
+		pos.y += TILE_SIZE;
+
+	}
+}
+
+void	exit_game(t_program *game)
+{
+	free(game->map.array);
+	exit(0);
 }
 
 int	main(int argc, char *argv[])
@@ -102,16 +258,11 @@ int	main(int argc, char *argv[])
 		exit(-1);
 	game.map = generate_map(argv[1]);
 	if (!validate_map(&game.map, argc, argv))
-	{
-		free(game.map.array);
-		exit(-1);
-	}
-	print_map_status(&game.map);
+		exit_game(&game);
+	set_map_positions(&game.map);
 	game.mlx = mlx_init();
-	game.background = new_sprite(&game, "./assets/basic/floor.xpm");
-	game.win = mlx_new_window(game.mlx, 1280, 720, "So Long");
+	game.win = mlx_new_window(game.mlx, game.map.array_size.x * TILE_SIZE, game.map.array_size.y * TILE_SIZE, "So Long");
 	mlx_key_hook(game.win, key_hook, &game);
-	set_character(&game);
-	render_frame(&game);
+	set_sprites(&game);
 	mlx_loop(game.mlx);
 }

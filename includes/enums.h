@@ -6,22 +6,19 @@
 /*   By: pdrago <pdrago@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 23:42:07 by pdrago            #+#    #+#             */
-/*   Updated: 2023/12/01 00:49:13 by pdrago           ###   ########.fr       */
+/*   Updated: 2023/12/03 05:01:59 by pdrago           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// enum e_assets
-// {
-// //pass assets relative paths
-// };
-//
+
 enum e_map_symbols
 {
 	ENTRANCE = 'P',
 	EXIT = 'E',
 	EMPTY = '0',
-	WALL = 1,
-	COLLECTIBLE = 'C'
+	WALL = '1',
+	COLLECTIBLE = 'C',
+	PLAYER = 'X'
 };
 
 enum e_errors

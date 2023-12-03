@@ -239,3 +239,30 @@ void	print_map_status(t_map *map)
 	ft_printf("Collectibles: %i\n", map->collectibles_number);
 }
 
+void	set_map_positions(t_map *map)
+{
+	int	column;
+	int	row;
+
+	row = 1;
+	column = 1;
+	while (map->array[row] && row < map->array_size.y)
+	{
+		column = 1;
+		while (map->array[row][column])
+		{
+			if (map->array[row][column] == EXIT)
+			{
+				map->exit_position.y = row;
+				map->exit_position.x = column;
+			}
+			else if (map->array[row][column] == ENTRANCE)
+			{
+				map->player_position.y = row;
+				map->player_position.x = column;
+			}
+			column++;
+		}
+		row++;
+	}
+}
