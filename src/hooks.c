@@ -3,7 +3,7 @@
 void	exit_game(t_program *game)
 {
 	free(game->map.array);
-	exit(0);
+	exit(-1);
 }
 
 void	check_win(t_program *game, t_map *map, t_character player)
@@ -33,7 +33,6 @@ int	key_hook(int key, t_program *game)
 	else if (key == W || key == A || key == S || key == D)
 		resolve_movement(key, game);
 	render_map(game);
-	print_map_status(&game->map);
 	check_collectibles(game);
 	check_win(game, &game->map, game->character);
 	return (0);

@@ -2,7 +2,7 @@
 
 ### Game
 - [x] moving with W, A, S, D, in four directions.
-- [ ] Should not be possible to walk into walls.
+- [x] Should not be possible to walk into walls.
 - [x] Display the current number of movements in every move.
 - [x] 2D view.
 
@@ -23,6 +23,8 @@
 - [x] Map has to have `.ber` extension.
 - [x] On any misconfiguration the program must exit in a clean way, and return "Error\n" followed by an explicit error message of your choice.
 
+### Norm
+- 42 Header in every file
 
 # Bonus Checklist
 - [ ] Make player lose when touch an enemy patrol.

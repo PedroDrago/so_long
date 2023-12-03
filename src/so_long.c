@@ -5,7 +5,7 @@ int	main(int argc, char *argv[])
 	t_program	game;
 
 	if (!validate_argv(argc, argv))
-		exit_game(&game);
+		exit(-1);
 	game.map = generate_map(argv[1]);
 	if (!validate_map(&game.map, argc, argv))
 		exit_game(&game);
