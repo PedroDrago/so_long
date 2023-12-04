@@ -2,7 +2,6 @@
 #include <fcntl.h>
 #include <unistd.h>
 
-
 void	print_map_status(t_map *map)
 {
 	int	row;
@@ -22,4 +21,3 @@ void	print_map_status(t_map *map)
 	ft_printf("Array y: %i\n", map->array_size.y);
 	ft_printf("Collectibles: %i\n", map->collectibles_number);
 }
-

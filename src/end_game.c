@@ -3,7 +3,7 @@
 
 void	destroy_map(t_map *map)
 {
-	int count;
+	int	count;
 
 	count = 0;
 	while (count <= map->array_size.y)

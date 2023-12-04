@@ -4,11 +4,19 @@ int	get_map_size(char *map_file)
 {
 	int		fd;
 	int		count;
+	char	*buffer;
 
 	fd = open(map_file, O_RDONLY);
 	count = 0;
-	while (get_next_line(fd))
+	buffer = get_next_line(fd);
+	count++;
+	while (buffer)
+	{
+		free(buffer);
+		buffer = get_next_line(fd);
 		count++;
+	}
+	free(buffer);
 	close(fd);
 	return (count);
 }
