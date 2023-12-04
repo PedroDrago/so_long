@@ -23,8 +23,7 @@ int	main(int argc, char *argv[])
 	game.win = mlx_new_window(game.mlx, game.map.array_size.x * TILE_SIZE,
 			game.map.array_size.y * TILE_SIZE, "So Long");
 	mlx_key_hook(game.win, key_hook, &game);
-	// mlx_mouse_hook(game.win, mouse_hook, &game);
-	mlx_hook(game.win, DestroyNotify , StructureNotifyMask, exit_game, &game);
+	mlx_hook(game.win, DestroyNotify, StructureNotifyMask, exit_game, &game);
 	set_sprites(&game);
 	mlx_loop(game.mlx);
 }
