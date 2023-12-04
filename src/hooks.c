@@ -27,7 +27,9 @@ int	key_hook(int key, t_program *game)
 {
 	if (key == ESC)
 		exit_game(game, EXIT_SUCCESS);
-	else if (key == W || key == A || key == S || key == D)
+	else if (key == W || key == A || key == S || key == D
+		|| key == ARROW_UP || key == ARROW_DOWN
+		|| key == ARROW_LEFT || key == ARROW_RIGHT)
 		resolve_movement(key, game);
 	render_map(game);
 	check_collectibles(game);

@@ -106,19 +106,19 @@ void	move_right(t_map *map, t_character *player)
 
 void	resolve_movement(int key, t_program *game)
 {
-	if (key == W)
+	if (key == W || key == ARROW_UP)
 	{
 		move_up(&game->map, &game->character);
 	}
-	else if (key == A)
+	else if (key == A || key == ARROW_LEFT)
 	{
 		move_left(&game->map, &game->character);
 	}
-	else if (key == S)
+	else if (key == S || key == ARROW_DOWN)
 	{
 		move_down(&game->map, &game->character);
 	}
-	else if (key == D)
+	else if (key == D || key == ARROW_RIGHT)
 	{
 		move_right(&game->map, &game->character);
 	}
