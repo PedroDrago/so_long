@@ -8,9 +8,9 @@
 
 ### Graphic management
 - [x] Has to display image in a window.
-- [ ] Smooth window management: change to other window, minimizing window, etc.
-- [~] ESC must close the window and quit the program in clean way.
-- [ ] Clicking on the cross on the window frame must close the window and quit the program in a clean way.
+- [x] Smooth window management: change to other window, minimizing window, etc.
+- [x] ESC must close the window and quit the program in clean way.
+- [x] Clicking on the cross on the window frame must close the window and quit the program in a clean way.
 - [x] Use of images is mandatory.
 
 ### Map
