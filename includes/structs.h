@@ -6,7 +6,7 @@
 /*   By: pdrago <pdrago@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 23:42:49 by pdrago            #+#    #+#             */
-/*   Updated: 2023/12/03 07:23:27 by pdrago           ###   ########.fr       */
+/*   Updated: 2023/12/04 00:36:55 by pdrago           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ typedef struct s_map
 	t_coord	array_size;
 	t_coord	player_position;
 	t_coord	exit_position;
-	int		collectibles_number;
+	unsigned int		collectibles_number;
 }	t_map;
 
 typedef struct s_exit

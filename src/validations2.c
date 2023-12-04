@@ -1,6 +1,4 @@
 #include "../includes/so_long.h"
-#include <stdio.h>
-#include <string.h>
 
 int	check_border_rows(t_map *map)
 {
@@ -25,10 +23,8 @@ int	check_border_rows(t_map *map)
 int	check_middle_rows(t_map *map)
 {
 	int	row;
-	int	column;
 
 	row = 0;
-	column = 0;
 	while (++row < map->array_size.y - 1)
 	{
 		if (map->array[row][0] != '1'
@@ -49,10 +45,11 @@ int	check_surrounded(t_map *map)
 
 int	check_path(t_map *map)
 {
+	(void) map;
 	return (TRUE);
 }
 
-int	error_message(int error, int argc, char *argv[])
+int	error_message(int error)
 {
 	if (error == WRONG_ARGUMENTS)
 		perror("\e[31mError\nWrong number of arguments (expected 2)\e[0m");

@@ -1,14 +1,15 @@
 #include "../includes/so_long.h"
 
+
 int	main(int argc, char *argv[])
 {
 	t_program	game;
 
 	if (!validate_argv(argc, argv))
-		exit(-1);
+		exit(EXIT_FAILURE);
 	game.map = generate_map(argv[1]);
-	if (!validate_map(&game.map, argc, argv))
-		exit_game(&game);
+	if (!validate_map(&game.map))
+		exit_game(&game, EXIT_FAILURE);
 	set_map_positions(&game.map);
 	game.mlx = mlx_init();
 	game.win = mlx_new_window(game.mlx, game.map.array_size.x * TILE_SIZE,

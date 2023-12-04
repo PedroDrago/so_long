@@ -27,29 +27,27 @@ int	check_rectangular(t_map *map)
 	return (TRUE);
 }
 
-int	validate_map(t_map *map, int argc, char *argv[])
+int	validate_map(t_map *map)
 {
 	if (!map->array)
-		return (error_message(MAP_NOT_FOUND, argc, argv));
+		return (error_message(MAP_NOT_FOUND));
 	if (!check_map_characters(map->array))
-		return (error_message(INVALID_CHARACTERS, argc, argv));
+		return (error_message(INVALID_CHARACTERS));
 	if (!check_rectangular(map))
-		return (error_message(MAP_NOT_RECTANGULAR, argc, argv));
+		return (error_message(MAP_NOT_RECTANGULAR));
 	if (!check_surrounded(map))
-		return (error_message(MAP_NOT_SURROUNDED, argc, argv));
+		return (error_message(MAP_NOT_SURROUNDED));
 	if (!check_path(map))
-		return (error_message(NO_VALID_PATH, argc, argv));
+		return (error_message(NO_VALID_PATH));
 	return (TRUE);
 }
 
 int	validate_argv(int argc, char *argv[])
 {
-	int	error;
-
 	if (argc != 2)
-		return (error_message(WRONG_ARGUMENTS, argc, argv));
+		return (error_message(WRONG_ARGUMENTS));
 	if (!ft_strnstr(argv[1], ".ber", ft_strlen(argv[1])))
-		return (error_message(WRONG_FILE_EXTENSION, argc, argv));
+		return (error_message(WRONG_FILE_EXTENSION));
 	return (TRUE);
 }
 
