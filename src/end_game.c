@@ -35,6 +35,7 @@ int	exit_game(t_program *game, int status)
 	destroy_images(game);
 	mlx_destroy_window(game->mlx, game->win);
 	mlx_destroy_display(game->mlx);
+	free(game->mlx);
 	exit (status);
 	return (status);
 }

@@ -1,14 +1,5 @@
 #include "../includes/so_long.h"
 
-int	mouse_hook(int key, t_program *game)
-{
-	(void) game;
-	ft_printf("%i\n", key);
-	if (key == 1)
-		ft_printf("a");
-	return (0);
-}
-
 int	main(int argc, char *argv[])
 {
 	t_program	game;
