@@ -6,7 +6,7 @@
 #    By: pdrago <pdrago@student.42.rio>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/21 14:53:51 by pdrago            #+#    #+#              #
-#    Updated: 2023/12/04 11:32:57 by pdrago           ###   ########.fr        #
+#    Updated: 2023/12/04 19:20:39 by pdrago           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ CC=clang
 all: $(NAME)
 
 $(NAME): $(SRC) $(LIBFT)
-	@$(CC) $(FLAGS) $(SRC) $(LIBFT) minilibx/libmlx_Linux.a -lX11 -lXext -o $(NAME)
+	@cc $(FLAGS) $(SRC) $(LIBFT) minilibx/libmlx_Linux.a -lX11 -lXext -o $(NAME)
 	@echo "$(GREEN)finished compiling so_long$(ENDCOLOR)"
 
 debug: $(SRC)
