@@ -6,7 +6,7 @@
 /*   By: pdrago <pdrago@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 04:56:20 by pdrago            #+#    #+#             */
-/*   Updated: 2023/12/05 14:38:06 by pdrago           ###   ########.fr       */
+/*   Updated: 2023/12/05 15:32:04 by pdrago           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,12 @@
 
 # include "../minilibx/mlx.h"
 # include "../minilibx/mlx_int.h"
-# include <stdlib.h> //malloc, free, exit
-# include <unistd.h> //write, read, close
-# include <fcntl.h> //open
-# include <stdio.h> //perror
-# include <string.h> //strerror
-# include <stdarg.h> //ft_printf
+# include <stdlib.h>
+# include <unistd.h>
+# include <fcntl.h>
+# include <stdio.h>
+# include <string.h>
+# include <stdarg.h>
 # include "macros.h"
 # include "structs.h"
 # include "../libft/libft.h"
@@ -46,7 +46,7 @@ int		check_middle_rows(t_map *map);
 //verify if all map borders are walls
 int		check_surrounded(t_map *map);
 //modify the map to be able to verify if a map is winnable
-void	map_checker(char *map[], int x, int y);
+void	path_checker(char *map[], int x, int y);
 //verify if map mas a valid path for winning
 int		check_path(char *map_file);
 //print error message based on error

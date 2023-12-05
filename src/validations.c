@@ -1,31 +1,16 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   validations.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pdrago <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/12/05 15:35:39 by pdrago            #+#    #+#             */
+/*   Updated: 2023/12/05 15:35:40 by pdrago           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/so_long.h"
-
-int	check_rectangular(t_map *map)
-{
-	int	row;
-	int	column;
-	int	row_size;
-
-	row = -1;
-	row_size = 0;
-	while (map->array[++row])
-	{
-		column = -1;
-		while (map->array[row][++column])
-		{
-			continue ;
-		}
-		if (row == 0)
-			row_size = column;
-		else if (column != row_size)
-			return (FALSE);
-	}
-	if (row == column || row <= 2 || column <= 2)
-		return (FALSE);
-	map->array_size.x = column;
-	map->array_size.y = row;
-	return (TRUE);
-}
 
 int	validate_map(t_map *map, char *map_file)
 {
@@ -54,41 +39,28 @@ int	validate_argv(int argc, char *argv[])
 	return (TRUE);
 }
 
-int	check_map_characters(char *map[])
+int	error_message(int error)
 {
-	struct s_validations	vars;
-
-	vars.entrances = 0;
-	vars.exits = 0;
-	vars.row = -1;
-	vars.collectibles = 0;
-	while (map[++vars.row])
-	{
-		vars.column = -1;
-		while (map[vars.row][++vars.column])
-		{
-			if (!ft_strchr("01CEP\n", map[vars.row][vars.column]))
-				return (FALSE);
-			if (map[vars.row][vars.column] == ENTRANCE)
-				vars.entrances++;
-			else if (map[vars.row][vars.column] == EXIT)
-				vars.exits++;
-			else if (map[vars.row][vars.column] == COLLECTIBLE)
-				vars.collectibles++;
-		}
-	}
-	if (vars.entrances != 1 || vars.exits != 1 || vars.collectibles < 1)
-		return (FALSE);
-	return (TRUE);
-}
-
-void	map_checker(char *map[], int x, int y)
-{
-	if (map[x][y] == WALL)
-		return ;	
-	map[x][y] = WALL;
-	map_checker(map, x - 1, y);
-	map_checker(map, x + 1, y);
-	map_checker(map, x , y - 1);
-	map_checker(map, x , y + 1);
+	if (error == WRONG_ARGUMENTS)
+		ft_putstr_fd("\e[31mError\nWrong number of \
+arguments (expected 2)\n\e[0m", STDERR_FILENO);
+	else if (error == WRONG_FILE_EXTENSION)
+		ft_putstr_fd("\e[31mError\nMap has invalid \
+extension (expecting .ber)\n\e[0m", STDERR_FILENO);
+	else if (error == INVALID_CHARACTERS)
+		ft_putstr_fd("\e[31mError\nMap has \
+invalid characters.\n\e[0m", STDERR_FILENO);
+	else if (error == MAP_NOT_RECTANGULAR)
+		ft_putstr_fd("\e[31mError\n The map \
+must be rectangular.\n\e[0m", STDERR_FILENO);
+	else if (error == MAP_NOT_FOUND)
+		ft_putstr_fd("\e[31mError\nThe map \
+was not found.\n\e[0m", STDERR_FILENO);
+	else if (error == MAP_NOT_SURROUNDED)
+		ft_putstr_fd("\e[31mError\nThe map must \
+be surrounded by walls.\n\e[0m", STDERR_FILENO);
+	else if (error == NO_VALID_PATH)
+		ft_putstr_fd("\e[31mError\nTHe map has no \
+valid path for winning.\n\e[0m", STDERR_FILENO);
+	return (FALSE);
 }
