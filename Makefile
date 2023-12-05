@@ -6,7 +6,7 @@
 #    By: pdrago <pdrago@student.42.rio>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/21 14:53:51 by pdrago            #+#    #+#              #
-#    Updated: 2023/12/04 19:20:39 by pdrago           ###   ########.fr        #
+#    Updated: 2023/12/05 05:52:18 by pdrago           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ LIBFT=libft/libft.a
 RED=\e[31m
 GREEN=\e[32m
 ENDCOLOR=\e[0m
-MAP=map.ber
+MAP=maps/map.ber
 CC=clang
 
 all: $(NAME)
@@ -41,8 +41,12 @@ $(LIBFT):
 
 clean:
 	@rm -f $(NAME) && cd libft && make clean
+	@echo "$(GREEN)Finished cleaning so_long$(ENDCOLOR)"
 
 fclean: clean
+	@echo "$(GREEN)Finished fcleaning so_long$(ENDCOLOR)"
 	@cd libft && make fclean
 
 re: fclean all
+
+.PHONY: all clean fclean re exec debug
