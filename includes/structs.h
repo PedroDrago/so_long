@@ -6,7 +6,7 @@
 /*   By: pdrago <pdrago@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 23:42:49 by pdrago            #+#    #+#             */
-/*   Updated: 2023/12/04 00:36:55 by pdrago           ###   ########.fr       */
+/*   Updated: 2023/12/05 06:15:08 by pdrago           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,11 +60,11 @@ typedef struct s_character
 
 typedef struct s_map
 {
-	char	**array;
-	t_coord	array_size;
-	t_coord	player_position;
-	t_coord	exit_position;
-	unsigned int		collectibles_number;
+	char			**array;
+	unsigned int	collectibles_number;
+	t_coord			array_size;
+	t_coord			player_position;
+	t_coord			exit_position;
 }	t_map;
 
 typedef struct s_exit

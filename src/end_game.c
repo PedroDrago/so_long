@@ -1,7 +1,6 @@
 #include "../includes/so_long.h"
-#include <stdio.h>
 
-void	destroy_map(t_map *map)
+int	destroy_map(t_map *map)
 {
 	int	count;
 
@@ -9,6 +8,7 @@ void	destroy_map(t_map *map)
 	while (count <= map->array_size.y)
 		free(map->array[count++]);
 	free(map->array);
+	return (EXIT_FAILURE);
 }
 
 void	destroy_images(t_program *game)

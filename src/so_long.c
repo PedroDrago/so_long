@@ -8,7 +8,7 @@ int	main(int argc, char *argv[])
 		exit(EXIT_FAILURE);
 	game.map = generate_map(argv[1]);
 	if (!validate_map(&game.map))
-		exit_game(&game, EXIT_FAILURE);
+		exit(destroy_map(&game.map));
 	set_map_positions(&game.map);
 	game.mlx = mlx_init();
 	game.win = mlx_new_window(game.mlx, game.map.array_size.x * TILE_SIZE,

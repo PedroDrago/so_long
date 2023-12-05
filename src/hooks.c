@@ -23,6 +23,14 @@ void	check_collectibles(t_program *game)
 	}
 }
 
+void	print_player_status(t_program *game)
+{
+	ft_printf("movement count: %u\n",
+		game->character.movement_count += 1);
+	ft_printf("Collectible count: %u/%u\n",
+		game->character.collectibles_count, game->map.collectibles_number);
+}
+
 int	key_hook(int key, t_program *game)
 {
 	if (key == ESC)
@@ -32,6 +40,7 @@ int	key_hook(int key, t_program *game)
 		|| key == ARROW_LEFT || key == ARROW_RIGHT)
 		resolve_movement(key, game);
 	render_map(game);
+	print_player_status(game);
 	check_collectibles(game);
 	check_win(game, &game->map, game->character);
 	return (0);

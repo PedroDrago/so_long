@@ -30,7 +30,10 @@ int	check_rectangular(t_map *map)
 int	validate_map(t_map *map)
 {
 	if (!map->array)
-		return (error_message(MAP_NOT_FOUND));
+	{
+		error_message(MAP_NOT_FOUND);
+		exit(EXIT_FAILURE); 
+	}
 	if (!check_map_characters(map->array))
 		return (error_message(INVALID_CHARACTERS));
 	if (!check_rectangular(map))
