@@ -6,7 +6,7 @@
 /*   By: pdrago <pdrago@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 04:56:20 by pdrago            #+#    #+#             */
-/*   Updated: 2023/12/05 06:42:25 by pdrago           ###   ########.fr       */
+/*   Updated: 2023/12/05 14:38:06 by pdrago           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int		exit_game(t_program *game, int status);
 //manage specific action for each key pressed
 int		key_hook(int key, t_program *game);
 //verify if current map is a valid map for playing
-int		validate_map(t_map *map);
+int		validate_map(t_map *map, char *map_file);
 //verify if arguments are valid
 int		validate_argv(int argc, char *argv[]);
 //verify if map has valid characters
@@ -45,8 +45,10 @@ int		check_border_rows(t_map *map);
 int		check_middle_rows(t_map *map);
 //verify if all map borders are walls
 int		check_surrounded(t_map *map);
+//modify the map to be able to verify if a map is winnable
+void	map_checker(char *map[], int x, int y);
 //verify if map mas a valid path for winning
-int		check_path(t_map *map);
+int		check_path(char *map_file);
 //print error message based on error
 int		error_message(int error);
 //destroy map created in the program

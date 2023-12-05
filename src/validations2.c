@@ -1,6 +1,35 @@
 #include "../includes/so_long.h"
 #include <errno.h>
 
+int	check_path(char *map_file)
+{
+	int	row;
+	int	column;
+	t_map	copy;
+
+	copy = generate_map(map_file);
+	check_rectangular(&copy);
+	set_map_positions(&copy);
+	row = 0;
+	map_checker(copy.array, copy.player_position.x, copy.player_position.y);
+	while (copy.array[row])
+	{
+		column = 0;
+		while (copy.array[column])
+		{
+			if (copy.array[row][column] == EXIT || copy.array[row][column] == COLLECTIBLE)
+			{
+				destroy_map(&copy);
+				return (FALSE);
+			}
+			column++;
+		}
+		row++;
+	}
+	destroy_map(&copy);
+	return (TRUE);
+}
+
 int	check_border_rows(t_map *map)
 {
 	int	row;
@@ -41,12 +70,6 @@ int	check_surrounded(t_map *map)
 		return (FALSE);
 	else if (!check_middle_rows(map))
 		return (FALSE);
-	return (TRUE);
-}
-
-int	check_path(t_map *map)
-{
-	(void) map;
 	return (TRUE);
 }
 

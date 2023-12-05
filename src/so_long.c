@@ -7,7 +7,7 @@ int	main(int argc, char *argv[])
 	if (!validate_argv(argc, argv))
 		exit(EXIT_FAILURE);
 	game.map = generate_map(argv[1]);
-	if (!validate_map(&game.map))
+	if (!validate_map(&game.map, argv[1]))
 		exit(destroy_map(&game.map));
 	set_map_positions(&game.map);
 	game.mlx = mlx_init();

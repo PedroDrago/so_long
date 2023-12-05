@@ -27,7 +27,7 @@ int	check_rectangular(t_map *map)
 	return (TRUE);
 }
 
-int	validate_map(t_map *map)
+int	validate_map(t_map *map, char *map_file)
 {
 	if (!map->array)
 	{
@@ -40,7 +40,7 @@ int	validate_map(t_map *map)
 		return (error_message(MAP_NOT_RECTANGULAR));
 	if (!check_surrounded(map))
 		return (error_message(MAP_NOT_SURROUNDED));
-	if (!check_path(map))
+	if (!check_path(map_file))
 		return (error_message(NO_VALID_PATH));
 	return (TRUE);
 }
@@ -80,4 +80,15 @@ int	check_map_characters(char *map[])
 	if (vars.entrances != 1 || vars.exits != 1 || vars.collectibles < 1)
 		return (FALSE);
 	return (TRUE);
+}
+
+void	map_checker(char *map[], int x, int y)
+{
+	if (map[x][y] == WALL)
+		return ;	
+	map[x][y] = WALL;
+	map_checker(map, x - 1, y);
+	map_checker(map, x + 1, y);
+	map_checker(map, x , y - 1);
+	map_checker(map, x , y + 1);
 }
