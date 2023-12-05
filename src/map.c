@@ -49,8 +49,8 @@ int	create_map(char *map_file, t_map *map)
 
 t_map	generate_map(char *map_file)
 {
+	int		fd;
 	t_map	map;
-	int	fd;
 
 	fd = create_map(map_file, &map);
 	if (fd < 0)

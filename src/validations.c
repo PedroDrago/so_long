@@ -32,7 +32,7 @@ int	validate_map(t_map *map)
 	if (!map->array)
 	{
 		error_message(MAP_NOT_FOUND);
-		exit(EXIT_FAILURE); 
+		exit(EXIT_FAILURE);
 	}
 	if (!check_map_characters(map->array))
 		return (error_message(INVALID_CHARACTERS));

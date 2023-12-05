@@ -5,7 +5,7 @@ int	destroy_map(t_map *map)
 	int	count;
 
 	count = 0;
-	while(map->array[count])
+	while (map->array[count])
 		free(map->array[count++]);
 	free(map->array[count++]);
 	free(map->array);
