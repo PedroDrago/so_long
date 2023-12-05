@@ -6,7 +6,7 @@
 /*   By: pdrago <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 15:35:27 by pdrago            #+#    #+#             */
-/*   Updated: 2023/12/05 15:35:28 by pdrago           ###   ########.fr       */
+/*   Updated: 2023/12/05 16:48:26 by pdrago           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,8 @@ void	render_tile(t_program *game, char object, t_coord pos)
 		game->exit_position_pixel.y = pos.y;
 	}
 	else if (object == ENTRANCE || object == PLAYER)
-	{
 		mlx_put_image_to_window(game->mlx, game->win,
 			game->character.current.img, pos.x, pos.y);
-	}
 }
 
 void	render_map(t_program *game)
