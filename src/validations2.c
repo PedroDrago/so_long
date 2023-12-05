@@ -1,4 +1,5 @@
 #include "../includes/so_long.h"
+#include <errno.h>
 
 int	check_border_rows(t_map *map)
 {
@@ -51,19 +52,20 @@ int	check_path(t_map *map)
 
 int	error_message(int error)
 {
+	
 	if (error == WRONG_ARGUMENTS)
-		perror("\e[31mError\nWrong number of arguments (expected 2)\e[0m");
+		ft_putstr_fd("\e[31mError\nWrong number of arguments (expected 2)\e[0m", 2);
 	else if (error == WRONG_FILE_EXTENSION)
-		perror("\e[31mError\nMap has invalid extension (expecting .ber)\e[0m");
+		ft_putstr_fd("\e[31mError\nMap has invalid extension (expecting .ber)\e[0m", 2);
 	else if (error == INVALID_CHARACTERS)
-		perror("\e[31mError\nMap has invalid characters.\e[0m");
+		ft_putstr_fd("\e[31mError\nMap has invalid characters.\e[0m", 2);
 	else if (error == MAP_NOT_RECTANGULAR)
-		perror("\e[31mError\n The map must be rectangular.\e[0m");
+		ft_putstr_fd("\e[31mError\n The map must be rectangular.\e[0m", 2);
 	else if (error == MAP_NOT_FOUND)
-		perror("\e[31mError\nThe map was not found.\e[0m");
+		ft_putstr_fd("\e[31mError\nThe map was not found.\e[0m", 2);
 	else if (error == MAP_NOT_SURROUNDED)
-		perror("\e[31mError\nThe map must be surrounded by walls.\e[0m");
+		ft_putstr_fd("\e[31mError\nThe map must be surrounded by walls.\e[0m", 2);
 	else if (error == NO_VALID_PATH)
-		perror("\e[31mError\nTHe map has no valid path for winning.\e[0m");
+		ft_putstr_fd("\e[31mError\nTHe map has no valid path for winning.\e[0m", 2);
 	return (FALSE);
 }

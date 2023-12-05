@@ -6,7 +6,7 @@
 #    By: pdrago <pdrago@student.42.rio>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/21 14:53:51 by pdrago            #+#    #+#              #
-#    Updated: 2023/12/05 05:52:18 by pdrago           ###   ########.fr        #
+#    Updated: 2023/12/05 06:53:08 by pdrago           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,9 @@ LIBFT=libft/libft.a
 RED=\e[31m
 GREEN=\e[32m
 ENDCOLOR=\e[0m
-MAP=maps/map.ber
+MAPDIR = maps
+MAP=$(MAPDIR)/$(M).ber
+M=map
 CC=clang
 
 all: $(NAME)
@@ -28,7 +30,7 @@ $(NAME): $(SRC) $(LIBFT)
 	@echo "$(GREEN)finished compiling so_long$(ENDCOLOR)"
 
 debug: $(SRC)
-	@$(CC) $(FLAGS) -g $(SRC) $(LIBFT) minilibx/libmlx_Linux.a -lX11 -lXext -o $(NAME)
+	@cc $(FLAGS) -g $(SRC) $(LIBFT) minilibx/libmlx_Linux.a -lX11 -lXext -o $(NAME)
 	@echo "$(GREEN)Entering lldb for so_long debugging:$(ENDCOLOR)"
 	@lldb ./$(NAME) $(MAP)
 

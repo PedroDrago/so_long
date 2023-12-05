@@ -9,12 +9,11 @@ int	get_map_size(char *map_file)
 	fd = open(map_file, O_RDONLY);
 	count = 0;
 	buffer = get_next_line(fd);
-	count++;
 	while (buffer)
 	{
+		count++;
 		free(buffer);
 		buffer = get_next_line(fd);
-		count++;
 	}
 	free(buffer);
 	close(fd);
@@ -28,9 +27,9 @@ int	create_map(char *map_file, t_map *map)
 	int		count;
 
 	fd = open(map_file, O_RDONLY);
-	if (fd < 0)
-		return (fd);
 	buffer = get_next_line(fd);
+	if (buffer == NULL)
+		return (-1);
 	count = 0;
 	map->array = (char **) malloc (sizeof(char *) * get_map_size(map_file) + 1);
 	if (!map->array)
