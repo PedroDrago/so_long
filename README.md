@@ -43,6 +43,7 @@ version: 3
         2. Penguin and snow theme.
         3. Lizard and desert theme.
 - [ ] Add a "You died" screen.
+- [ ] Change door sprite (snow does not fit the theme)
 - [ ] Add soundtrack to the game.
 - [ ] Add soundeffects to the game.
 
