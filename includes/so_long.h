@@ -6,7 +6,7 @@
 /*   By: pdrago <pdrago@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 04:56:20 by pdrago            #+#    #+#             */
-/*   Updated: 2023/12/05 15:32:04 by pdrago           ###   ########.fr       */
+/*   Updated: 2023/12/06 11:42:41 by pdrago           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@
 # include <stdarg.h>
 # include "macros.h"
 # include "structs.h"
-# include "../libft/libft.h"
+# include "utils.h"
 
 //finish the game executing, cleaning everything 
 int		exit_game(t_program *game, int status);

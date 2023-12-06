@@ -1,27 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striteri.c                                      :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pdrago <pdrago@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/12 11:12:03 by pdrago            #+#    #+#             */
-/*   Updated: 2023/11/01 12:23:07 by pdrago           ###   ########.fr       */
+/*   Created: 2023/10/06 00:35:07 by pdrago            #+#    #+#             */
+/*   Updated: 2023/12/06 11:50:34 by pdrago           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "../../includes/so_long.h"
+
 /*
-Applies the function ’f’ on each character of
-the string passed as argument, passing its index
-as first argument. Each character is passed by
-address to ’f’ to be modified if necessary.
+Outputs the character ’c’ to the given file
+descriptor.
 */
 
-void	ft_striteri(char *s, void (*f)(unsigned int, char*))
+void	ft_putchar_fd(char c, int fd)
 {
-	unsigned int	count;
-
-	count = 0;
-	while (*s)
-		f(count++, s++);
+	write(fd, &c, 1);
 }

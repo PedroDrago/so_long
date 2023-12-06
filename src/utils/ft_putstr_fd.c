@@ -1,22 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pdrago <pdrago@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/01 21:42:31 by pdrago            #+#    #+#             */
-/*   Updated: 2023/11/01 12:24:10 by pdrago           ###   ########.fr       */
+/*   Created: 2023/10/06 00:36:26 by pdrago            #+#    #+#             */
+/*   Updated: 2023/12/06 11:50:44 by pdrago           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "../../includes/so_long.h"
+
 /*
-If c is an uppercase letter, ft_tolower() returns its lowercase equivalent.
+Outputs the string ’s’ to the given file
+descriptor.
 */
 
-int	ft_tolower(int c)
+void	ft_putstr_fd(char *s, int fd)
 {
-	if (c >= 'A' && c <= 'Z')
-		c += 32;
-	return (c);
+	while (*s)
+		ft_putchar_fd(*s++, fd);
 }

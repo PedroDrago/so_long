@@ -6,11 +6,11 @@
 /*   By: pdrago <pdrago@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 16:46:03 by pdrago            #+#    #+#             */
-/*   Updated: 2023/11/16 23:11:38 by pdrago           ###   ########.fr       */
+/*   Updated: 2023/12/06 11:43:42 by pdrago           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "../../../includes/get_next_line.h"
 
 int	has_break_line(const char *s)
 {

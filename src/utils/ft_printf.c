@@ -6,11 +6,11 @@
 /*   By: pdrago <pdrago@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 01:14:59 by pdrago            #+#    #+#             */
-/*   Updated: 2023/11/30 01:17:34 by pdrago           ###   ########.fr       */
+/*   Updated: 2023/12/06 11:50:25 by pdrago           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../../includes/so_long.h"
 
 static int	ft_retputstr(char *str)
 {

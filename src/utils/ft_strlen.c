@@ -1,21 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pdrago <pdrago@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/01 20:56:50 by pdrago            #+#    #+#             */
-/*   Updated: 2023/11/01 12:21:09 by pdrago           ###   ########.fr       */
+/*   Created: 2023/10/01 21:15:43 by pdrago            #+#    #+#             */
+/*   Updated: 2023/12/06 11:50:50 by pdrago           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "../../includes/so_long.h"
+
 /*
-Checks  for  an  alphabetic  character, it is 
-equivalent to (ft_isupper(c) || ft_islower(c)).
+The ft_strlen() function calculates and returns the length of the 
+string pointed to by s, excluding the terminating null byte ('\0').
 */
 
-int	ft_isalpha(int c)
+size_t	ft_strlen(const char *s)
 {
-	return ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'));
+	size_t	len;
+
+	len = 0;
+	while (s && s[len])
+		len++;
+	return (len);
 }
