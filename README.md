@@ -16,8 +16,18 @@ git clone https://github.com/PedroDrago/so_long.git && cd so_long && git clone h
 In 42 projects it is not acceptable to have any kind of memory leak, and in this project you can have leaks that could be found to discover, so I made a simple script that uses valgrind to check if your so_long has any sort of leaks:
 - [so_long_leaktester](https://github.com/PedroDrago/so_long_leaktester)
 
+### Art Sources
+I'm a programmer, not an artist, so all the pixel art you see in the game was made by other people who gently provided free assets for anyone who would like to download it, here are the artists that made the arts that I used:
 
 
+- frog character sprites
+    - Artist: [PixelFrogStudio](https://twitter.com/PixelFrogStudio)
+    - [Sprites Pack](https://pixelfrog-assets.itch.io/pixel-adventure-1)
+
+- Sushi, Wall, Grass and Door
+    Artists: [Pixel Boy](https://twitter.com/2Pblog1) and [AAA](https://www.instagram.com/challenger.aaa/?hl=fr)
+    - [Patreon](https://www.patreon.com/pixelarchipel)
+    - [Sprites Pack](https://pixel-boy.itch.io/ninja-adventure-asset-pack)
 
 
 
@@ -84,14 +94,3 @@ version: 3
 - Add a depoimento in the README about my creative process in this project
 - Delete repository with all commits, and copy files to a brand new repository.
 
-### Art Sources
-- Font: https://opengameart.org/content/sharp-retro-font
-
-### Frog
-- Linces: https://creativecommons.org/publicdomain/zero/1.0/
-- Artist: https://twitter.com/PixelFrogStudio
-
-### Ninja pack
-- Linces: https://creativecommons.org/publicdomain/zero/1.0/
-- Artist: https://twitter.com/2Pblog1 and https://www.instagram.com/challenger.aaa/?hl=fr
-- Patreon: https://www.patreon.com/pixelarchipel
