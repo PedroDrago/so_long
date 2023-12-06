@@ -1,5 +1,9 @@
 # so_long
 
+<p align="center">
+    <img src="./textures/printscreen.png"/>
+</p>
+
 ![printscreen](printscreen.png)
 
 <p align="center">This project is about writing a 2D Game in C.</p>
