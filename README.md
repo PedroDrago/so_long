@@ -17,9 +17,16 @@ This was the first project in the 42 Curriculum that made me have tons of fun wi
 ---
 <h3 align="center">How to play it</h3>
 
-Just run the following command (you have to be on Linux)
+OBS: My so_long is linux exclusive :/
+
+1. Build game by running the following command
 ```bash
-git clone https://github.com/PedroDrago/so_long.git && cd so_long && git clone https://github.com/42Paris/minilibx-linux.git minilibx && cd minilibx && ./configure && cd .. && make && ./so_long
+git clone https://github.com/PedroDrago/so_long.git && cd so_long && make setup
+```
+
+2. Start the game:
+```bash
+./play
 ```
 
 ---
