@@ -25,7 +25,7 @@ I'm a programmer, not an artist, so all the pixel art you see in the game was ma
     - [Sprites Pack](https://pixelfrog-assets.itch.io/pixel-adventure-1)
 
 - Sushi, Wall, Grass and Door
-    Artists: [Pixel Boy](https://twitter.com/2Pblog1) and [AAA](https://www.instagram.com/challenger.aaa/?hl=fr)
+    - Artists: [Pixel Boy](https://twitter.com/2Pblog1) and [AAA](https://www.instagram.com/challenger.aaa/?hl=fr)
     - [Patreon](https://www.patreon.com/pixelarchipel)
     - [Sprites Pack](https://pixel-boy.itch.io/ninja-adventure-asset-pack)
 
