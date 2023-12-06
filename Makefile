@@ -6,7 +6,7 @@
 #    By: pdrago <pdrago@student.42.rio>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/21 14:53:51 by pdrago            #+#    #+#              #
-#    Updated: 2023/12/06 19:02:24 by pdrago           ###   ########.fr        #
+#    Updated: 2023/12/06 19:09:51 by pdrago           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,7 +40,8 @@ play: $(NAME)
 
 setup:
 	@echo "$(GREEN)Installing minilibx$(ENDCOLOR)"
-	@git clone https://github.com/42Paris/minilibx-linux.git minilibx && ./minilibx/configure
+	@git clone https://github.com/42Paris/minilibx-linux.git minilibx && cd minilibx
+	@./configure && cd ..
 	@make
 	@echo "$(GREEN)Ready to play!$(ENDCOLOR)"
 
