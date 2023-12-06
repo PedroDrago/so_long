@@ -1,7 +1,7 @@
 # Mandatory Checklist
 
 ### Game
-- [x] moving with W, A, S, D, in four directions.
+- [x] moving with W, A, S, D, in four directions (and arrows).
 - [x] Should not be possible to walk into walls.
 - [x] Display the current number of movements in every move.
 - [x] 2D view.
@@ -19,12 +19,13 @@
 - [x] Validate if map has only one exit and one starting position.
 - [x] Validate if map has atleast one collectible.
 - [x] Validate if map is surrounded by walls.
-- [ ] Validate if there is a valid path in the map (for collecting all collectibles and exiting).
+- [x] Validate if there is a valid path in the map (for collecting all collectibles and exiting).
 - [x] Map has to have `.ber` extension.
 - [x] On any misconfiguration the program must exit in a clean way, and return "Error\n" followed by an explicit error message of your choice.
 
-### Norm
-- 42 Header in every file
+### Files
+- Fix makefile, writing all source files by hand, removing undesired rules.
+- Clean and organize texture files
 
 # Bonus Checklist
 - [ ] Make player lose when touch an enemy patrol.
@@ -32,15 +33,27 @@
 - [ ] Display movement count directly on screen instead of writing it in the shell.
 
 # My checklist
-- [ ] Add colors to error messages.
 - [ ] Add a game menu.
     - [ ] Add the option to select between 3 map themes in the game menu.
+        1. Frog and grass theme.
+        2. Penguin and snow theme.
+        3. Lizard and desert theme.
 - [ ] Add a "You died" screen.
 - [ ] Add soundtrack to the game.
 - [ ] Add soundeffects to the game.
 
-
-
+# Public Repo checklist:
+- Delete libft directory
+    - Add libft used functions source code to src.
+    - Add these functions to the header.
+- Remove headers
+- Add a screenshot to the README
+- Add a how to build and play to the README
+    - Create a script that sets everything (minilibx .a, make in it, make in solong etc etc...)
+- Add a link to the leaktester to the README
+- Add artists links and thanks in the RADME
+- Add a depoimento in the README about my creative process in this project
+- Delete repository with all commits, and copy files to a brand new repository.
 
 ### Art Sources
 - Font: https://opengameart.org/content/sharp-retro-font
