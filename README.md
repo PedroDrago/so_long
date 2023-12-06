@@ -13,7 +13,7 @@ git clone https://github.com/PedroDrago/so_long.git && cd so_long && git clone h
 ```
 
 ### Leaktester
-In 42 projects it is not acceptable to have any kind of memory leak, and in this project you can have leaks that could be found to discover, so I made a simple script that uses valgrind to check if your so_long has any sort of leaks:
+In 42 projects it is not acceptable to have any kind of memory leak, and in this project you could have leaks and even not knowing it, due to the fact that you need to test your game in a lot of different maps to see if you are leak free. So, I made a simple script that uses valgrind to check if your so_long has any sort of leaks:
 - [so_long_leaktester](https://github.com/PedroDrago/so_long_leaktester)
 
 ### Art Sources
