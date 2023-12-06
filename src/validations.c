@@ -6,7 +6,7 @@
 /*   By: pdrago <pdrago@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 22:56:19 by pdrago            #+#    #+#             */
-/*   Updated: 2023/12/05 22:57:52 by pdrago           ###   ########.fr       */
+/*   Updated: 2023/12/06 13:04:06 by pdrago           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,10 +49,11 @@ arguments (expected 2)\n\e[0m", STDERR_FILENO);
 extension (expecting .ber)\n\e[0m", STDERR_FILENO);
 	else if (error == INVALID_CHARACTERS)
 		ft_putstr_fd("\e[31mError\nMap has \
-invalid characters.\n\e[0m", STDERR_FILENO);
+invalid characters, is missing a crucial \
+character or has double unique character.\n\e[0m", STDERR_FILENO);
 	else if (error == MAP_NOT_RECTANGULAR)
-		ft_putstr_fd("\e[31mError\n The map \
-must be rectangular.\n\e[0m", STDERR_FILENO);
+		ft_putstr_fd("\e[31mError\nThe map \
+must be rectangular and large enough.\n\e[0m", STDERR_FILENO);
 	else if (error == MAP_NOT_FOUND)
 		ft_putstr_fd("\e[31mError\nThe map \
 was not found.\n\e[0m", STDERR_FILENO);
@@ -60,7 +61,7 @@ was not found.\n\e[0m", STDERR_FILENO);
 		ft_putstr_fd("\e[31mError\nThe map must \
 be surrounded by walls.\n\e[0m", STDERR_FILENO);
 	else if (error == NO_VALID_PATH)
-		ft_putstr_fd("\e[31mError\nTHe map has no \
+		ft_putstr_fd("\e[31mError\nThe map has no \
 valid path for winning.\n\e[0m", STDERR_FILENO);
 	return (FALSE);
 }

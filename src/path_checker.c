@@ -6,7 +6,7 @@
 /*   By: pdrago <pdrago@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 22:56:54 by pdrago            #+#    #+#             */
-/*   Updated: 2023/12/05 22:56:55 by pdrago           ###   ########.fr       */
+/*   Updated: 2023/12/06 13:13:08 by pdrago           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	path_checker(char *map[], int x, int y)
 {
-	if (map[x][y] == WALL)
+	if (map[y][x] == WALL)
 		return ;
-	map[x][y] = WALL;
+	map[y][x] = WALL;
 	path_checker(map, x - 1, y);
 	path_checker(map, x + 1, y);
 	path_checker(map, x, y - 1);
@@ -37,7 +37,7 @@ int	check_path(char *map_file)
 	while (copy.array[++row])
 	{
 		column = -1;
-		while (copy.array[++column])
+		while (copy.array[row][++column])
 		{
 			if (copy.array[row][column] == EXIT
 				|| copy.array[row][column] == COLLECTIBLE)

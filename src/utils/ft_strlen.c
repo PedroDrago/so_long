@@ -6,11 +6,11 @@
 /*   By: pdrago <pdrago@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/01 21:15:43 by pdrago            #+#    #+#             */
-/*   Updated: 2023/12/06 11:50:50 by pdrago           ###   ########.fr       */
+/*   Updated: 2023/12/06 12:09:45 by pdrago           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/so_long.h"
+#include "../../includes/utils.h"
 
 /*
 The ft_strlen() function calculates and returns the length of the 

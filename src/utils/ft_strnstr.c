@@ -6,11 +6,11 @@
 /*   By: pdrago <pdrago@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 10:17:00 by pdrago            #+#    #+#             */
-/*   Updated: 2023/12/06 11:50:55 by pdrago           ###   ########.fr       */
+/*   Updated: 2023/12/06 12:10:55 by pdrago           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/so_long.h"
+#include "../../includes/utils.h"
 
 /*
 The strnstr() function locates the first occurrence of the 

@@ -6,7 +6,7 @@
 /*   By: pdrago <pdrago@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 23:42:07 by pdrago            #+#    #+#             */
-/*   Updated: 2023/12/03 07:53:09 by pdrago           ###   ########.fr       */
+/*   Updated: 2023/12/06 12:52:12 by pdrago           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,12 @@
 # ifndef COLLECTIBLE_PATH 
 #  define COLLECTIBLE_PATH "./textures/collectible.xpm"
 # endif
+# ifndef TRUE
+#  define TRUE 1
+# endif
+# ifndef FALSE
+#  define FALSE 0
+# endif
 
 enum e_map_symbols
 {
@@ -80,22 +86,8 @@ enum e_errors
 	NO_VALID_PATH = 6,
 };
 
-enum e_colors
-{
-	PURPLE = 0xB06FE5,
-	RED = 0xFF1B1B,
-	GREEN = 0x1FFF1B,
-	BLUE = 0x1B24FF,
-	BLACK = 0x000000,
-	WHITE = 0xFFFFFF,
-	GRAY = 0x898989,
-};
-
 enum e_keys{
-	ENTER = 65293,
 	ESC = 65307,
-	SPACE= 32,
-	TAB = 65289,
 	W = 119,
 	A = 97,
 	S = 115,
@@ -105,16 +97,4 @@ enum e_keys{
 	ARROW_RIGHT = 65363,
 	ARROW_LEFT = 65361,
 };
-
-enum e_events
-{
-	ON_KEYDOWN = 2,
-	ON_KEYUP = 3,
-	ON_MOUSEDOWN = 4,
-	ON_MOUSEUP = 5,
-	ON_MOUSEMOVE = 6,
-	ON_EXPOSE = 12,
-	ON_DESTROY = 17,
-};
-
 #endif

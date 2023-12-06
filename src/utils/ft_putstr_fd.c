@@ -6,11 +6,11 @@
 /*   By: pdrago <pdrago@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 00:36:26 by pdrago            #+#    #+#             */
-/*   Updated: 2023/12/06 11:50:44 by pdrago           ###   ########.fr       */
+/*   Updated: 2023/12/06 12:09:39 by pdrago           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/so_long.h"
+#include "../../includes/utils.h"
 
 /*
 Outputs the string ’s’ to the given file

@@ -1,6 +1,10 @@
-# Mandatory Checklist
+# so_long
 
+version: 3
+
+# Mandatory Checklist
 ### Game
+- [x] Player goal must be collect all collectibles then escape chosing the shortest route.
 - [x] moving with W, A, S, D, in four directions (and arrows).
 - [x] Should not be possible to walk into walls.
 - [x] Display the current number of movements in every move.
@@ -43,9 +47,6 @@
 - [ ] Add soundeffects to the game.
 
 # Public Repo checklist:
-- Delete libft directory
-    - Add libft used functions source code to src.
-    - Add these functions to the header.
 - Remove headers
 - Add a screenshot to the README
 - Add a how to build and play to the README

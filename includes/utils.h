@@ -6,46 +6,32 @@
 /*   By: pdrago <pdrago@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 17:53:29 by pdrago            #+#    #+#             */
-/*   Updated: 2023/12/06 11:50:04 by pdrago           ###   ########.fr       */
+/*   Updated: 2023/12/06 12:51:54 by pdrago           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#ifndef UTILS_H
+# define UTILS_H
 
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdarg.h>
-# include "get_next_line.h"
 
-# ifndef INT_MIN
-#  define INT_MIN -2147483648
-# endif 
-
-# ifndef INT_MAX
-#  define INT_MAX 2147483647
-# endif 
-
-# ifndef UINT_MAX
-#  define UINT_MAX 4294967295
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 42
 # endif
 
-# ifndef LONG_MAX
-#  define LONG_MAX 9223372036854775807
+# ifndef MAX_FD
+#  define MAX_FD 1024
 # endif
 
-# ifndef LONG_MIN
-#  define LONG_MIN -9223372036854775808
-# endif
-
-# ifndef TRUE
-#  define TRUE 1
-# endif
-
-# ifndef FALSE
-#  define FALSE 0
-# endif
-
+int		gnl_len(char *str);
+int		has_break_line(const char *s);
+char	*ft_joinfree(char *s1, char *s2);
+char	*get_next_line(int fd);
+char	*read_line(int fd);
+char	*dup_post_n(char *buffer);
+char	*dup_pre_n(char *buffer);
 int		ft_printf(const char *str, ...);
 size_t	ft_strlen(const char *s);
 char	*ft_strnstr(const char *big, const char *little, size_t len);

@@ -6,11 +6,11 @@
 /*   By: pdrago <pdrago@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 16:45:11 by pdrago            #+#    #+#             */
-/*   Updated: 2023/12/06 11:43:35 by pdrago           ###   ########.fr       */
+/*   Updated: 2023/12/06 12:09:22 by pdrago           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../../includes/get_next_line.h"
+#include "../../../includes/utils.h"
 
 char	*dup_pre_n(char *buffer)
 {
