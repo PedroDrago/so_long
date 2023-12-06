@@ -1,0 +1,4 @@
+#! /bin/sh
+file=$(ls maps | shuf -n 1)
+path=maps/$file
+./so_long $path

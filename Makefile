@@ -6,7 +6,7 @@
 #    By: pdrago <pdrago@student.42.rio>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/21 14:53:51 by pdrago            #+#    #+#              #
-#    Updated: 2023/12/06 13:08:23 by pdrago           ###   ########.fr        #
+#    Updated: 2023/12/06 19:02:24 by pdrago           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,9 +34,15 @@ debug: $(SRC)
 	@echo "$(GREEN)Entering lldb for so_long debugging:$(ENDCOLOR)"
 	@lldb ./$(NAME) $(MAP)
 
-exec: $(NAME)
+play: $(NAME)
 	@echo "$(GREEN)Executing so_long:$(ENDCOLOR)"
-	@./$(NAME) $(MAP)
+	./play
+
+setup:
+	@echo "$(GREEN)Installing minilibx$(ENDCOLOR)"
+	@git clone https://github.com/42Paris/minilibx-linux.git minilibx && ./minilibx/configure
+	@make
+	@echo "$(GREEN)Ready to play!$(ENDCOLOR)"
 
 clean:
 	@rm -f $(NAME)
@@ -47,4 +53,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean exec
+.PHONY: all clean fclean play
