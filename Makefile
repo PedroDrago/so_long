@@ -6,7 +6,7 @@
 #    By: pdrago <pdrago@student.42.rio>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/21 14:53:51 by pdrago            #+#    #+#              #
-#    Updated: 2023/12/06 21:54:52 by pdrago           ###   ########.fr        #
+#    Updated: 2023/12/06 22:16:46 by pdrago           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,6 +22,7 @@ ENDCOLOR=\e[0m
 MAPDIR = maps
 MAP=$(MAPDIR)/$(M).ber
 M=map
+MINILIBX=minilibx/
 LEAKTESTER=so_long_leaktester/
 
 all: $(NAME)
@@ -39,7 +40,9 @@ play: $(NAME)
 	@echo "$(GREEN)Executing so_long:$(ENDCOLOR)"
 	./play
 
-setup:
+setup: $(MINILIBX)
+
+$(MINILIBX):
 	@echo "$(GREEN)Installing minilibx$(ENDCOLOR)"
 	@git clone https://github.com/42Paris/minilibx-linux.git minilibx && cd minilibx && make && cd ..
 	@make
