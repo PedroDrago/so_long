@@ -1,0 +1,8 @@
+#! /bin/sh
+
+RED='\033[0;31m'
+ENDCOLOR='\033[0m'
+
+rm -rf LICENSE maps/* README.md submission.md textures/*.png textures/converter.txt todo.md minilibx
+
+echo "$RED""Now fix the makefile $endcolor"
