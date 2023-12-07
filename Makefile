@@ -6,7 +6,7 @@
 #    By: pdrago <pdrago@student.42.rio>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/21 14:53:51 by pdrago            #+#    #+#              #
-#    Updated: 2023/12/06 19:11:05 by pdrago           ###   ########.fr        #
+#    Updated: 2023/12/06 20:56:52 by pdrago           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,6 +50,11 @@ clean:
 
 fclean: clean
 	@echo "$(GREEN)Finished fcleaning so_long$(ENDCOLOR)"
+
+leak: $(NAME)
+	@git clone git@github.com:PedroDrago/so_long_leaktester.git
+	@cd so_long_leaktester && make
+	
 
 re: fclean all
 
