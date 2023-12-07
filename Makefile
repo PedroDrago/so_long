@@ -6,7 +6,7 @@
 #    By: pdrago <pdrago@student.42.rio>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/21 14:53:51 by pdrago            #+#    #+#              #
-#    Updated: 2023/12/06 20:56:52 by pdrago           ###   ########.fr        #
+#    Updated: 2023/12/06 21:54:52 by pdrago           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,6 +22,7 @@ ENDCOLOR=\e[0m
 MAPDIR = maps
 MAP=$(MAPDIR)/$(M).ber
 M=map
+LEAKTESTER=so_long_leaktester/
 
 all: $(NAME)
 
@@ -49,13 +50,17 @@ clean:
 	@echo "$(GREEN)Finished cleaning so_long$(ENDCOLOR)"
 
 fclean: clean
+	@rm -rf $(LEAKTESTER)
 	@echo "$(GREEN)Finished fcleaning so_long$(ENDCOLOR)"
 
-leak: $(NAME)
+$(LEAKTESTER):
 	@git clone git@github.com:PedroDrago/so_long_leaktester.git
+
+
+leak: $(NAME) $(LEAKTESTER)
 	@cd so_long_leaktester && make
 	
 
 re: fclean all
 
-.PHONY: all clean fclean play
+.PHONY: all clean fclean play leak
