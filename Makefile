@@ -6,7 +6,7 @@
 #    By: pdrago <pdrago@student.42.rio>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/21 14:53:51 by pdrago            #+#    #+#              #
-#    Updated: 2023/12/06 22:20:49 by pdrago           ###   ########.fr        #
+#    Updated: 2023/12/06 22:24:47 by pdrago           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,7 +43,7 @@ $(LEAKTESTER):
 	@git clone git@github.com:PedroDrago/so_long_leaktester.git
 
 debug: $(SRC)
-	@cc $(FLAGS) -g $(SRC) minilibx/libmlx_Linux.a -lX11 -lXext -o $(NAME)
+	@clang $(FLAGS) -g $(SRC) minilibx/libmlx_Linux.a -lX11 -lXext -o $(NAME)
 	@echo "$(GREEN)Entering lldb for so_long debugging:$(ENDCOLOR)"
 	@lldb ./$(NAME) $(MAP)
 
