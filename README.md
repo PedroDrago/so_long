@@ -1,13 +1,13 @@
 <h1 align="center">so_long</h3>
 
 <p align="center">
-    <img src="./textures/printscreen.png"/>
+    <img src="./textures/ascii.png"/>
 </p>
 <p align="center">This project is about writing a 2D Game in C.</p>
 
 ---
 <p align="center">
-    <img src="./textures/ascii.png"/>
+    <img src="./textures/printscreen.png"/>
 </p>
 
 
