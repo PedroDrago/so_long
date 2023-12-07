@@ -6,7 +6,7 @@
 #    By: pdrago <pdrago@student.42.rio>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/21 14:53:51 by pdrago            #+#    #+#              #
-#    Updated: 2023/12/06 22:17:56 by pdrago           ###   ########.fr        #
+#    Updated: 2023/12/06 22:20:49 by pdrago           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,9 +27,20 @@ LEAKTESTER=so_long_leaktester/
 
 all: $(NAME)
 
+setup: $(MINILIBX)
+
 $(NAME): $(SRC) $(MINILIBX)
 	@cc $(FLAGS) $(SRC) minilibx/libmlx_Linux.a -lX11 -lXext -o $(NAME)
 	@echo "$(GREEN)finished compiling so_long$(ENDCOLOR)"
+
+$(MINILIBX):
+	@echo "$(GREEN)Installing minilibx$(ENDCOLOR)"
+	@git clone https://github.com/42Paris/minilibx-linux.git minilibx && cd minilibx && make && cd ..
+	@make
+
+$(LEAKTESTER):
+	@echo "$(GREEN)Downloading so_long_leaktester:$(ENDCOLOR)"
+	@git clone git@github.com:PedroDrago/so_long_leaktester.git
 
 debug: $(SRC)
 	@cc $(FLAGS) -g $(SRC) minilibx/libmlx_Linux.a -lX11 -lXext -o $(NAME)
@@ -40,13 +51,9 @@ play: $(NAME)
 	@echo "$(GREEN)Executing so_long:$(ENDCOLOR)"
 	./play
 
-setup: $(MINILIBX)
-
-$(MINILIBX):
-	@echo "$(GREEN)Installing minilibx$(ENDCOLOR)"
-	@git clone https://github.com/42Paris/minilibx-linux.git minilibx && cd minilibx && make && cd ..
-	@make
-	@echo "$(GREEN)Ready to play!$(ENDCOLOR)"
+leak: $(NAME) $(LEAKTESTER)
+	@echo "$(GREEN)Executing so_long_leaktester:$(ENDCOLOR)"
+	@cd so_long_leaktester && make
 
 clean:
 	@rm -f $(NAME)
@@ -55,14 +62,6 @@ clean:
 fclean: clean
 	@rm -rf $(LEAKTESTER)
 	@echo "$(GREEN)Finished fcleaning so_long$(ENDCOLOR)"
-
-$(LEAKTESTER):
-	@git clone git@github.com:PedroDrago/so_long_leaktester.git
-
-
-leak: $(NAME) $(LEAKTESTER)
-	@cd so_long_leaktester && make
-	
 
 re: fclean all
 

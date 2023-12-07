@@ -19,7 +19,7 @@ This was the first project in the 42 Curriculum that made me have tons of fun wi
 
 1. Build game by running the following command
 ```bash
-git clone https://github.com/PedroDrago/so_long.git && cd so_long && make setup
+git clone https://github.com/PedroDrago/so_long.git && cd so_long && make
 ```
 
 2. Start the game:
