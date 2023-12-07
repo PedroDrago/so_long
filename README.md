@@ -7,7 +7,7 @@
 
 ---
 <p align="center">
-    <img src="./ascii.png"/>
+    <img src="./textures/ascii.png"/>
 </p>
 
 
