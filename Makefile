@@ -6,7 +6,7 @@
 #    By: pdrago <pdrago@student.42.rio>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/21 14:53:51 by pdrago            #+#    #+#              #
-#    Updated: 2023/12/06 22:16:46 by pdrago           ###   ########.fr        #
+#    Updated: 2023/12/06 22:17:56 by pdrago           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,7 @@ LEAKTESTER=so_long_leaktester/
 
 all: $(NAME)
 
-$(NAME): $(SRC)
+$(NAME): $(SRC) $(MINILIBX)
 	@cc $(FLAGS) $(SRC) minilibx/libmlx_Linux.a -lX11 -lXext -o $(NAME)
 	@echo "$(GREEN)finished compiling so_long$(ENDCOLOR)"
 
