@@ -6,7 +6,7 @@
 /*   By: pdrago <pdrago@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 23:42:49 by pdrago            #+#    #+#             */
-/*   Updated: 2023/12/08 16:32:39 by pdrago           ###   ########.fr       */
+/*   Updated: 2023/12/08 16:59:37 by pdrago           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,10 +43,10 @@ typedef struct s_image
 
 typedef struct s_character
 {
+	int				dead;
 	unsigned int	movement_count;
 	unsigned int	collectibles_count;
 	unsigned int	kill_count;
-	int			dead;
 	t_image			down;
 	t_image			up;
 	t_image			right;

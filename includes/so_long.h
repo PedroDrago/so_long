@@ -6,7 +6,7 @@
 /*   By: pdrago <pdrago@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 04:56:20 by pdrago            #+#    #+#             */
-/*   Updated: 2023/12/08 16:25:32 by pdrago           ###   ########.fr       */
+/*   Updated: 2023/12/08 16:58:54 by pdrago           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,24 +25,10 @@
 # include "structs.h"
 # include "utils.h"
 
-
-void	resolve_attack(t_character *player, t_map *map);
-void	attack(t_character *player, t_map *map);
-void	fill_with_enemies(t_map *map, int row, int column);
-void	generate_enemies(t_map *map, int enemies_number);
-void	exit_game_esc(t_program *game, int status);
-void	set_map(t_map *map);
-char	*ft_itoa(int n);
-void	set_movement_letters(t_map *map, char *number);
-int	choose_char(char c);
-void	do_letters(t_map *map, t_character *player);
-void	set_collectible_letters(t_map *map, char *number);
-int	is_collectible(t_map *map, int x, int y);
-int	is_enemy(t_map *map, int x, int y);
-int	is_exit(t_map *map, int x, int y);
-void	do_letters(t_map *map, t_character *player);
-
-
+int		choose_char(char c);
+int		is_collectible(t_map *map, int x, int y);
+int		is_enemy(t_map *map, int x, int y);
+int		is_exit(t_map *map, int x, int y);
 //finish the game executing, cleaning everything 
 int		exit_game(t_program *game, int status);
 //manage specific action for each key pressed
@@ -106,5 +92,16 @@ void	set_sprites(t_program *game);
 void	render_tile(t_program *game, char object, t_coord pos);
 //render the current map to screen
 void	render_map(t_program *game);
+void	attack(t_character *player, t_map *map);
+void	resolve_attack(t_character *player, t_map *map);
+void	fill_with_enemies(t_map *map, int row, int column);
+void	generate_enemies(t_map *map, int enemies_number);
+void	exit_game_esc(t_program *game, int status);
+void	set_map(t_map *map);
+void	set_movement_letters(t_map *map, char *number);
+void	do_letters(t_map *map, t_character *player);
+void	set_collectible_letters(t_map *map, char *number);
+void	do_letters(t_map *map, t_character *player);
+char	*ft_itoa(int n);
 
 #endif
