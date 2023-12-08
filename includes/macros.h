@@ -6,7 +6,7 @@
 /*   By: pdrago <pdrago@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 23:42:07 by pdrago            #+#    #+#             */
-/*   Updated: 2023/12/08 12:08:29 by pdrago           ###   ########.fr       */
+/*   Updated: 2023/12/08 14:16:26 by pdrago           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,36 @@
 # ifndef FALSE
 #  define FALSE 0
 # endif
+# ifndef ZERO_PATH
+#  define ZERO_PATH "./textures/numbers/zero.xpm"
+# endif
+# ifndef ONE_PATH
+#  define ONE_PATH "./textures/numbers/one.xpm"
+# endif
+# ifndef TWO_PATH
+#  define TWO_PATH "./textures/numbers/two.xpm"
+# endif
+# ifndef THREE_PATH
+#  define THREE_PATH "./textures/numbers/three.xpm"
+# endif
+# ifndef FOUR_PATH
+#  define FOUR_PATH "./textures/numbers/four.xpm"
+# endif
+# ifndef FIVE_PATH
+#  define FIVE_PATH "./textures/numbers/five.xpm"
+# endif
+# ifndef SIX_PATH
+#  define SIX_PATH "./textures/numbers/six.xpm"
+# endif
+# ifndef SEVEN_PATH
+#  define SEVEN_PATH "./textures/numbers/seven.xpm"
+# endif
+# ifndef EIGHT_PATH
+#  define EIGHT_PATH "./textures/numbers/eight.xpm"
+# endif
+# ifndef NINE_PATH
+#  define NINE_PATH "./textures/numbers/nine.xpm"
+# endif
 
 enum e_map_symbols
 {
@@ -79,7 +109,17 @@ enum e_map_symbols
 	WALL = '1',
 	COLLECTIBLE = 'C',
 	PLAYER = 'X',
-	ENEMY = 'G'
+	ENEMY = 'G',
+	ZERO = 'Z',
+	ONE = 'O',
+	TWO = '2',
+	THREE = '3',
+	FOUR = '4',
+	FIVE = '5',
+	SIX = '6',
+	SEVEN = '7',
+	EIGHT = '8',
+	NINE = '9',
 };
 
 enum e_errors

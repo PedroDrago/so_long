@@ -6,7 +6,7 @@
 /*   By: pdrago <pdrago@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 22:57:16 by pdrago            #+#    #+#             */
-/*   Updated: 2023/12/08 13:02:03 by pdrago           ###   ########.fr       */
+/*   Updated: 2023/12/08 15:18:30 by pdrago           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	set_map(t_map *map)
 {
 	set_map_positions(map);
 	generate_enemies(map, map->collectibles_number);
+	map->array[map->array_size.y - 1][0] = ZERO;
+	map->array[0][0] = ZERO;
 }
 
 int	get_map_size(char *map_file)

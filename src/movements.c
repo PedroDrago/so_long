@@ -1,14 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   movements.c                                        :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: pdrago <pdrago@student.42.rio>             +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/05 22:57:00 by pdrago            #+#    #+#             */
-/*   Updated: 2023/12/08 11:32:08 by pdrago           ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
 
 #include "../includes/so_long.h"
 
@@ -26,17 +15,16 @@ void	move_up(t_map *map, t_character *player)
 		else if (map->array[current_y - 1][current_x] == ENEMY)
 			player->dead = TRUE;
 		map->array[current_y - 1][current_x] = PLAYER;
-		if (current_y == map->exit_position.y
-			&& current_x == map->exit_position.x)
+		if (is_exit(map, current_x, current_y))
 			map->array[current_y][current_x] = EXIT;
 		else
 			map->array[current_y][current_x] = EMPTY;
 		map->player_position.y--;
-		if (current_y - 1 == map->exit_position.y
-			&& current_x == map->exit_position.x)
+		if (is_exit(map, current_x, current_y - 1))
 			player->current = player->up_door;
 		else
 			player->current = player->up;
+		do_letters(map, player);
 	}
 }
 
@@ -54,17 +42,16 @@ void	move_left(t_map *map, t_character *player)
 		else if (map->array[current_y][current_x - 1] == ENEMY)
 			player->dead = TRUE;
 		map->array[current_y][current_x - 1] = PLAYER;
-		if (current_y == map->exit_position.y
-			&& current_x == map->exit_position.x)
+		if (is_exit(map, current_x, current_y))
 			map->array[current_y][current_x] = EXIT;
 		else
 			map->array[current_y][current_x] = EMPTY;
 		map->player_position.x--;
-		if (current_y == map->exit_position.y
-			&& current_x - 1 == map->exit_position.x)
+		if (is_exit(map, current_x - 1, current_y))
 			player->current = player->left_door;
 		else
 			player->current = player->left;
+		do_letters(map, player);
 	}
 }
 
@@ -82,17 +69,16 @@ void	move_down(t_map *map, t_character *player)
 		else if (map->array[current_y + 1][current_x] == ENEMY)
 			player->dead = TRUE;
 		map->array[current_y + 1][current_x] = PLAYER;
-		if (current_y == map->exit_position.y
-			&& current_x == map->exit_position.x)
+		if (is_exit(map, current_x, current_y))
 			map->array[current_y][current_x] = EXIT;
 		else
 			map->array[current_y][current_x] = EMPTY;
 		map->player_position.y++;
-		if (current_y + 1 == map->exit_position.y
-			&& current_x == map->exit_position.x)
+		if (is_exit(map, current_x, current_y + 1))
 			player->current = player->down_door;
 		else
 			player->current = player->down;
+		do_letters(map, player);
 	}
 }
 
@@ -105,23 +91,50 @@ void	move_right(t_map *map, t_character *player)
 	current_y = map->player_position.y;
 	if (map->array[map->player_position.y][map->player_position.x + 1] != '1')
 	{
-		if (map->array[current_y][current_x + 1] == COLLECTIBLE)
+		if (is_collectible(map, current_x + 1, current_y))
 			player->collectibles_count++;
-		else if (map->array[current_y][current_x + 1] == ENEMY)
+		else if (is_enemy(map, current_x + 1, current_y))
 			player->dead = TRUE;
 		map->array[current_y][current_x + 1] = PLAYER;
-		if (current_y == map->exit_position.y
-			&& current_x == map->exit_position.x)
+		if (is_exit(map, current_x, current_y))
 			map->array[current_y][current_x] = EXIT;
 		else
 			map->array[current_y][current_x] = EMPTY;
 		map->player_position.x++;
-		if (current_y == map->exit_position.y
-			&& current_x + 1 == map->exit_position.x)
+		if (is_exit(map, current_x + 1, current_y))
 			player->current = player->right_door;
 		else
 			player->current = player->right;
+		do_letters(map, player);
 	}
+}
+int	is_collectible(t_map *map, int x, int y)
+{
+	return (map->array[y][x] == COLLECTIBLE);
+}
+
+int	is_enemy(t_map *map, int x, int y)
+{
+	return (map->array[y][x] == ENEMY);
+}
+
+int	is_exit(t_map *map, int x, int y)
+{
+	return(x == map->exit_position.x && y == map->exit_position.y);
+}
+
+void	do_letters(t_map *map, t_character *player)
+{
+	char	*number;
+
+	number = ft_itoa(player->movement_count);
+	if ((int) ft_strlen(number) < map->array_size.x)
+		set_movement_letters(map, number);
+	free (number);
+	number = ft_itoa(player->collectibles_count);
+	if ((int) ft_strlen(number) < map->array_size.x)
+		set_collectible_letters(map, number);
+	free(number);
 }
 
 void	resolve_movement(int key, t_program *game)

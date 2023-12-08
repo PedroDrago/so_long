@@ -6,7 +6,7 @@
 /*   By: pdrago <pdrago@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 22:56:26 by pdrago            #+#    #+#             */
-/*   Updated: 2023/12/08 12:05:40 by pdrago           ###   ########.fr       */
+/*   Updated: 2023/12/08 13:53:42 by pdrago           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,19 @@ void	set_character(t_program *game)
 	game->character.dead = FALSE;
 }
 
+void	set_numbers(t_program *game)
+{
+	game->numbers.zero = new_sprite(game, ZERO_PATH);
+	game->numbers.one = new_sprite(game, ONE_PATH);
+	game->numbers.two = new_sprite(game, TWO_PATH);
+	game->numbers.three = new_sprite(game, THREE_PATH);
+	game->numbers.four = new_sprite(game, FOUR_PATH);
+	game->numbers.five = new_sprite(game, FIVE_PATH);
+	game->numbers.six = new_sprite(game, SIX_PATH);
+	game->numbers.seven = new_sprite(game, SEVEN_PATH);
+	game->numbers.eight = new_sprite(game, EIGHT_PATH);
+	game->numbers.nine = new_sprite(game, NINE_PATH);
+}
 void	set_exit(t_program *game)
 {
 	game->exit.closed = new_sprite(game, EXIT_CLOSED_PATH);
@@ -62,4 +75,5 @@ void	set_sprites(t_program *game)
 	game->victory = new_sprite(game, VICTORY_PATH);
 	game->wall = new_sprite(game, WALL_PATH);
 	game->enemy = new_sprite(game, ENEMY_PATH);
+	set_numbers(game);
 }

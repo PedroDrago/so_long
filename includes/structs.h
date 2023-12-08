@@ -6,7 +6,7 @@
 /*   By: pdrago <pdrago@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 23:42:49 by pdrago            #+#    #+#             */
-/*   Updated: 2023/12/08 12:05:30 by pdrago           ###   ########.fr       */
+/*   Updated: 2023/12/08 13:51:38 by pdrago           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,20 @@ typedef struct s_character
 	t_coord			array_position;
 }	t_character;
 
+typedef struct s_numbers
+{
+	t_image	zero;
+	t_image	one;
+	t_image	two;
+	t_image	three;
+	t_image	four;
+	t_image	five;
+	t_image	six;
+	t_image	seven;
+	t_image	eight;
+	t_image	nine;
+}	t_numbers;
+
 typedef struct s_map
 {
 	char			**array;
@@ -90,5 +104,6 @@ typedef struct s_program
 	t_image		collectible;
 	t_image		victory;
 	t_image		enemy;
+	t_numbers	numbers;
 }	t_program;
 #endif
