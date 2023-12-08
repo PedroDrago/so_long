@@ -6,7 +6,7 @@
 /*   By: pdrago <pdrago@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 12:14:10 by pdrago            #+#    #+#             */
-/*   Updated: 2023/12/08 12:14:46 by pdrago           ###   ########.fr       */
+/*   Updated: 2023/12/08 16:56:29 by pdrago           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,5 +49,4 @@ void	generate_enemies(t_map *map, int enemies_number)
 		}
 		row++;
 	}
-	print_map_status(map);
 }

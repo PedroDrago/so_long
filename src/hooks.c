@@ -6,7 +6,7 @@
 /*   By: pdrago <pdrago@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 22:57:22 by pdrago            #+#    #+#             */
-/*   Updated: 2023/12/08 14:46:17 by pdrago           ###   ########.fr       */
+/*   Updated: 2023/12/08 16:56:13 by pdrago           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,6 @@ int	key_hook(int key, t_program *game)
 	else if (key == SPACE)
 		attack(&game->character, &game->map);
 	render_map(game);
-	print_map_status(&game->map);
 	print_player_status(game);
 	check_collectibles(game);
 	check_end(game, &game->map, game->character);

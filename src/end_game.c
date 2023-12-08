@@ -6,7 +6,7 @@
 /*   By: pdrago <pdrago@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 22:57:26 by pdrago            #+#    #+#             */
-/*   Updated: 2023/12/08 15:30:14 by pdrago           ###   ########.fr       */
+/*   Updated: 2023/12/08 16:44:48 by pdrago           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	destroy_map(t_map *map)
 	return (EXIT_FAILURE);
 }
 
-void	destroy_images(t_program *game)
+void	destroy_character(t_program *game)
 {
 	mlx_destroy_image(game->mlx, game->character.up.img);
 	mlx_destroy_image(game->mlx, game->character.up_door.img);
@@ -34,13 +34,19 @@ void	destroy_images(t_program *game)
 	mlx_destroy_image(game->mlx, game->character.left_door.img);
 	mlx_destroy_image(game->mlx, game->character.right.img);
 	mlx_destroy_image(game->mlx, game->character.right_door.img);
+	mlx_destroy_image(game->mlx, game->character.attacking_door.img);
+	mlx_destroy_image(game->mlx, game->character.attacking_grass.img);
+}
+
+void	destroy_images(t_program *game)
+{
+	destroy_character(game);
 	mlx_destroy_image(game->mlx, game->exit.open.img);
 	mlx_destroy_image(game->mlx, game->exit.closed.img);
 	mlx_destroy_image(game->mlx, game->wall.img);
 	mlx_destroy_image(game->mlx, game->victory.img);
 	mlx_destroy_image(game->mlx, game->background.img);
 	mlx_destroy_image(game->mlx, game->collectible.img);
-	mlx_destroy_image(game->mlx, game->character.attacking.img);
 	mlx_destroy_image(game->mlx, game->enemy.img);
 	mlx_destroy_image(game->mlx, game->numbers.zero.img);
 	mlx_destroy_image(game->mlx, game->numbers.one.img);

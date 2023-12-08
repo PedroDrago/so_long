@@ -6,7 +6,7 @@
 /*   By: pdrago <pdrago@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 22:56:54 by pdrago            #+#    #+#             */
-/*   Updated: 2023/12/08 10:37:22 by pdrago           ###   ########.fr       */
+/*   Updated: 2023/12/08 16:55:51 by pdrago           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ int	check_path(char *map_file)
 	set_map_positions(&copy);
 	row = -1;
 	path_checker(copy.array, copy.player_position.x, copy.player_position.y);
-	print_map_status(&copy);
 	while (copy.array[++row])
 	{
 		column = -1;

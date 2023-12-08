@@ -6,7 +6,7 @@
 /*   By: pdrago <pdrago@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 23:42:49 by pdrago            #+#    #+#             */
-/*   Updated: 2023/12/08 13:51:38 by pdrago           ###   ########.fr       */
+/*   Updated: 2023/12/08 16:32:39 by pdrago           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,8 @@ typedef struct s_character
 	t_image			down_door;
 	t_image			left_door;
 	t_image			right_door;
-	t_image			attacking;
+	t_image			attacking_grass;
+	t_image			attacking_door;
 	t_coord			array_indexes;
 	t_coord			array_position;
 }	t_character;

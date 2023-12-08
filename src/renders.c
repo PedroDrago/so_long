@@ -6,34 +6,39 @@
 /*   By: pdrago <pdrago@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 22:56:44 by pdrago            #+#    #+#             */
-/*   Updated: 2023/12/08 14:44:28 by pdrago           ###   ########.fr       */
+/*   Updated: 2023/12/08 16:42:44 by pdrago           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
 
+void	doi(void *mlx_ptr, void *win_ptr, void *img_ptr, t_coord pos)
+{
+	mlx_put_image_to_window(mlx_ptr, win_ptr, img_ptr, pos.x, pos.y);
+}
+
 void	resolve_letters(t_program *game, char object, t_coord pos)
 {
 	if (object == ZERO)
-		mlx_put_image_to_window(game->mlx, game->win, game->numbers.zero.img, pos.x, pos.y);
+		doi(game->mlx, game->win, game->numbers.zero.img, pos);
 	else if (object == ONE)
-		mlx_put_image_to_window(game->mlx, game->win, game->numbers.one.img, pos.x, pos.y);
+		doi(game->mlx, game->win, game->numbers.one.img, pos);
 	else if (object == TWO)
-		mlx_put_image_to_window(game->mlx, game->win, game->numbers.two.img, pos.x, pos.y);
+		doi(game->mlx, game->win, game->numbers.two.img, pos);
 	else if (object == THREE)
-		mlx_put_image_to_window(game->mlx, game->win, game->numbers.three.img, pos.x, pos.y);
+		doi(game->mlx, game->win, game->numbers.three.img, pos);
 	else if (object == FOUR)
-		mlx_put_image_to_window(game->mlx, game->win, game->numbers.four.img, pos.x, pos.y);
+		doi(game->mlx, game->win, game->numbers.four.img, pos);
 	else if (object == FIVE)
-		mlx_put_image_to_window(game->mlx, game->win, game->numbers.five.img, pos.x, pos.y);
+		doi(game->mlx, game->win, game->numbers.five.img, pos);
 	else if (object == SIX)
-		mlx_put_image_to_window(game->mlx, game->win, game->numbers.six.img, pos.x, pos.y);
+		doi(game->mlx, game->win, game->numbers.six.img, pos);
 	else if (object == SEVEN)
-		mlx_put_image_to_window(game->mlx, game->win, game->numbers.seven.img, pos.x, pos.y);
+		doi(game->mlx, game->win, game->numbers.seven.img, pos);
 	else if (object == EIGHT)
-		mlx_put_image_to_window(game->mlx, game->win, game->numbers.eight.img, pos.x, pos.y);
+		doi(game->mlx, game->win, game->numbers.eight.img, pos);
 	else if (object == NINE)
-		mlx_put_image_to_window(game->mlx, game->win, game->numbers.nine.img, pos.x, pos.y);
+		doi(game->mlx, game->win, game->numbers.nine.img, pos);
 }
 
 void	render_tile(t_program *game, char object, t_coord pos)

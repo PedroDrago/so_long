@@ -6,7 +6,7 @@
 /*   By: pdrago <pdrago@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 23:42:07 by pdrago            #+#    #+#             */
-/*   Updated: 2023/12/08 14:16:26 by pdrago           ###   ########.fr       */
+/*   Updated: 2023/12/08 16:32:14 by pdrago           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,8 +55,11 @@
 # ifndef VICTORY_PATH
 #  define VICTORY_PATH "./textures/frog/victory.xpm"
 # endif
-# ifndef ATTACKING_PATH
-#  define ATTACKING_PATH "./textures/frog/attacking.xpm"
+# ifndef ATTACKING_GRASS_PATH
+#  define ATTACKING_GRASS_PATH "./textures/frog/attacking_grass.xpm"
+# endif
+# ifndef ATTACKING_DOOR_PATH
+#  define ATTACKING_DOOR_PATH "./textures/frog/attacking_door.xpm"
 # endif
 # ifndef COLLECTIBLE_PATH 
 #  define COLLECTIBLE_PATH "./textures/collectible/collectible.xpm"

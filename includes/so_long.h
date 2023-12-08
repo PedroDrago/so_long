@@ -6,7 +6,7 @@
 /*   By: pdrago <pdrago@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 04:56:20 by pdrago            #+#    #+#             */
-/*   Updated: 2023/12/08 15:16:10 by pdrago           ###   ########.fr       */
+/*   Updated: 2023/12/08 16:25:32 by pdrago           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,11 +35,12 @@ void	set_map(t_map *map);
 char	*ft_itoa(int n);
 void	set_movement_letters(t_map *map, char *number);
 int	choose_char(char c);
+void	do_letters(t_map *map, t_character *player);
+void	set_collectible_letters(t_map *map, char *number);
 int	is_collectible(t_map *map, int x, int y);
 int	is_enemy(t_map *map, int x, int y);
 int	is_exit(t_map *map, int x, int y);
 void	do_letters(t_map *map, t_character *player);
-void	set_collectible_letters(t_map *map, char *number);
 
 
 //finish the game executing, cleaning everything 
