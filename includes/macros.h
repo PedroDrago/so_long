@@ -6,7 +6,7 @@
 /*   By: pdrago <pdrago@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 23:42:07 by pdrago            #+#    #+#             */
-/*   Updated: 2023/12/06 12:52:12 by pdrago           ###   ########.fr       */
+/*   Updated: 2023/12/08 12:08:29 by pdrago           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,8 +55,14 @@
 # ifndef VICTORY_PATH
 #  define VICTORY_PATH "./textures/frog/victory.xpm"
 # endif
+# ifndef ATTACKING_PATH
+#  define ATTACKING_PATH "./textures/frog/attacking.xpm"
+# endif
 # ifndef COLLECTIBLE_PATH 
-#  define COLLECTIBLE_PATH "./textures/collectible.xpm"
+#  define COLLECTIBLE_PATH "./textures/collectible/collectible.xpm"
+# endif
+# ifndef ENEMY_PATH
+#  define ENEMY_PATH "./textures/enemy/enemy.xpm"
 # endif
 # ifndef TRUE
 #  define TRUE 1
@@ -72,7 +78,8 @@ enum e_map_symbols
 	EMPTY = '0',
 	WALL = '1',
 	COLLECTIBLE = 'C',
-	PLAYER = 'X'
+	PLAYER = 'X',
+	ENEMY = 'G'
 };
 
 enum e_errors
@@ -92,6 +99,7 @@ enum e_keys{
 	A = 97,
 	S = 115,
 	D = 100,
+	SPACE = 32,
 	ARROW_UP = 65362,
 	ARROW_DOWN = 65364,
 	ARROW_RIGHT = 65363,

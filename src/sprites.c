@@ -6,7 +6,7 @@
 /*   By: pdrago <pdrago@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 22:56:26 by pdrago            #+#    #+#             */
-/*   Updated: 2023/12/05 22:56:29 by pdrago           ###   ########.fr       */
+/*   Updated: 2023/12/08 12:05:40 by pdrago           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,11 +36,14 @@ void	set_character(t_program *game)
 	game->character.left_door = new_sprite(game, FROG_LEFT_DOOR_PATH);
 	game->character.right = new_sprite(game, FROG_RIGHT_PATH);
 	game->character.right_door = new_sprite(game, FROG_RIGHT_DOOR_PATH);
+	game->character.attacking = new_sprite(game, ATTACKING_PATH);
 	game->character.current = game->character.down;
 	game->character.movement_count = 0;
 	game->character.collectibles_count = 0;
 	game->character.array_position.x = 0;
 	game->character.array_position.y = 0;
+	game->character.kill_count = 0;
+	game->character.dead = FALSE;
 }
 
 void	set_exit(t_program *game)
@@ -58,4 +61,5 @@ void	set_sprites(t_program *game)
 	game->background = new_sprite(game, BACKGROUND_PATH);
 	game->victory = new_sprite(game, VICTORY_PATH);
 	game->wall = new_sprite(game, WALL_PATH);
+	game->enemy = new_sprite(game, ENEMY_PATH);
 }

@@ -6,11 +6,17 @@
 /*   By: pdrago <pdrago@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 22:57:16 by pdrago            #+#    #+#             */
-/*   Updated: 2023/12/05 22:57:17 by pdrago           ###   ########.fr       */
+/*   Updated: 2023/12/08 13:02:03 by pdrago           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
+
+void	set_map(t_map *map)
+{
+	set_map_positions(map);
+	generate_enemies(map, map->collectibles_number);
+}
 
 int	get_map_size(char *map_file)
 {

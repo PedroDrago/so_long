@@ -6,7 +6,7 @@
 /*   By: pdrago <pdrago@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 22:57:00 by pdrago            #+#    #+#             */
-/*   Updated: 2023/12/05 22:57:02 by pdrago           ###   ########.fr       */
+/*   Updated: 2023/12/08 11:32:08 by pdrago           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ void	move_up(t_map *map, t_character *player)
 	{
 		if (map->array[current_y - 1][current_x] == COLLECTIBLE)
 			player->collectibles_count++;
+		else if (map->array[current_y - 1][current_x] == ENEMY)
+			player->dead = TRUE;
 		map->array[current_y - 1][current_x] = PLAYER;
 		if (current_y == map->exit_position.y
 			&& current_x == map->exit_position.x)
@@ -49,6 +51,8 @@ void	move_left(t_map *map, t_character *player)
 	{
 		if (map->array[current_y][current_x - 1] == COLLECTIBLE)
 			player->collectibles_count++;
+		else if (map->array[current_y][current_x - 1] == ENEMY)
+			player->dead = TRUE;
 		map->array[current_y][current_x - 1] = PLAYER;
 		if (current_y == map->exit_position.y
 			&& current_x == map->exit_position.x)
@@ -75,6 +79,8 @@ void	move_down(t_map *map, t_character *player)
 	{
 		if (map->array[current_y + 1][current_x] == COLLECTIBLE)
 			player->collectibles_count++;
+		else if (map->array[current_y + 1][current_x] == ENEMY)
+			player->dead = TRUE;
 		map->array[current_y + 1][current_x] = PLAYER;
 		if (current_y == map->exit_position.y
 			&& current_x == map->exit_position.x)
@@ -101,6 +107,8 @@ void	move_right(t_map *map, t_character *player)
 	{
 		if (map->array[current_y][current_x + 1] == COLLECTIBLE)
 			player->collectibles_count++;
+		else if (map->array[current_y][current_x + 1] == ENEMY)
+			player->dead = TRUE;
 		map->array[current_y][current_x + 1] = PLAYER;
 		if (current_y == map->exit_position.y
 			&& current_x == map->exit_position.x)

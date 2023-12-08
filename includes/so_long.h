@@ -6,7 +6,7 @@
 /*   By: pdrago <pdrago@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 04:56:20 by pdrago            #+#    #+#             */
-/*   Updated: 2023/12/06 11:42:41 by pdrago           ###   ########.fr       */
+/*   Updated: 2023/12/08 12:23:58 by pdrago           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,15 @@
 # include "macros.h"
 # include "structs.h"
 # include "utils.h"
+
+
+void	resolve_attack(t_character *player, t_map *map);
+void	attack(t_character *player, t_map *map);
+void	fill_with_enemies(t_map *map, int row, int column);
+void	generate_enemies(t_map *map, int enemies_number);
+void	exit_game_esc(t_program *game, int status);
+void	set_map(t_map *map);
+
 
 //finish the game executing, cleaning everything 
 int		exit_game(t_program *game, int status);

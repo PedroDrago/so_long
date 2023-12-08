@@ -6,7 +6,7 @@
 /*   By: pdrago <pdrago@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 22:56:13 by pdrago            #+#    #+#             */
-/*   Updated: 2023/12/05 22:56:14 by pdrago           ###   ########.fr       */
+/*   Updated: 2023/12/08 12:24:14 by pdrago           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	main(int argc, char *argv[])
 	game.map = generate_map(argv[1]);
 	if (!validate_map(&game.map, argv[1]))
 		exit(destroy_map(&game.map));
-	set_map_positions(&game.map);
+	set_map(&game.map);
 	game.mlx = mlx_init();
 	game.win = mlx_new_window(game.mlx, game.map.array_size.x * TILE_SIZE,
 			game.map.array_size.y * TILE_SIZE, "So Long");

@@ -6,7 +6,7 @@
 /*   By: pdrago <pdrago@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 22:57:26 by pdrago            #+#    #+#             */
-/*   Updated: 2023/12/05 22:57:27 by pdrago           ###   ########.fr       */
+/*   Updated: 2023/12/08 12:25:00 by pdrago           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,14 @@ void	destroy_images(t_program *game)
 	mlx_destroy_image(game->mlx, game->victory.img);
 	mlx_destroy_image(game->mlx, game->background.img);
 	mlx_destroy_image(game->mlx, game->collectible.img);
+	mlx_destroy_image(game->mlx, game->character.attacking.img);
+	mlx_destroy_image(game->mlx, game->enemy.img);
+}
+
+void	exit_game_esc(t_program *game, int status)
+{
+	game->character.dead = TRUE;
+	exit_game(game, status);
 }
 
 int	exit_game(t_program *game, int status)
@@ -49,6 +57,10 @@ int	exit_game(t_program *game, int status)
 	mlx_destroy_window(game->mlx, game->win);
 	mlx_destroy_display(game->mlx);
 	free(game->mlx);
+	if (game->character.dead)
+		ft_printf("\e[31mYou loose!\n\e[0m");
+	else
+		ft_printf("\e[32mYou won!\n\e[0m");
 	exit (status);
 	return (status);
 }

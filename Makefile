@@ -6,7 +6,7 @@
 #    By: pdrago <pdrago@student.42.rio>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/21 14:53:51 by pdrago            #+#    #+#              #
-#    Updated: 2023/12/06 22:24:47 by pdrago           ###   ########.fr        #
+#    Updated: 2023/12/08 12:17:13 by pdrago           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ FLAGS=-Wall -Wextra -Werror
 SRCDIR=src
 UTILSDIR=$(SRCDIR)/utils
 GNLDIR=$(UTILSDIR)/get_next_line
-SRC=$(SRCDIR)/end_game.c $(SRCDIR)/hooks.c $(SRCDIR)/map.c $(SRCDIR)/map_checkers.c $(SRCDIR)/map_utils.c $(SRCDIR)/movements.c $(SRCDIR)/path_checker.c $(SRCDIR)/renders.c $(SRCDIR)/so_long.c $(SRCDIR)/sprites.c $(SRCDIR)/validations.c $(UTILSDIR)/ft_printf.c $(UTILSDIR)/ft_putchar_fd.c $(UTILSDIR)/ft_putstr_fd.c $(UTILSDIR)/ft_strchr.c $(UTILSDIR)/ft_strlen.c $(UTILSDIR)/ft_strnstr.c $(GNLDIR)/get_next_line.c  $(GNLDIR)/get_next_line_utils.c
+SRC=$(SRCDIR)/end_game.c $(SRCDIR)/attack.c $(SRCDIR)/enemy.c $(SRCDIR)/hooks.c $(SRCDIR)/map.c $(SRCDIR)/map_checkers.c $(SRCDIR)/map_utils.c $(SRCDIR)/movements.c $(SRCDIR)/path_checker.c $(SRCDIR)/renders.c $(SRCDIR)/so_long.c $(SRCDIR)/sprites.c $(SRCDIR)/validations.c $(UTILSDIR)/ft_printf.c $(UTILSDIR)/ft_putchar_fd.c $(UTILSDIR)/ft_putstr_fd.c $(UTILSDIR)/ft_strchr.c $(UTILSDIR)/ft_strlen.c $(UTILSDIR)/ft_strnstr.c $(GNLDIR)/get_next_line.c  $(GNLDIR)/get_next_line_utils.c
 RED=\e[31m
 GREEN=\e[32m
 ENDCOLOR=\e[0m

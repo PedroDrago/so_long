@@ -6,7 +6,7 @@
 /*   By: pdrago <pdrago@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 23:42:49 by pdrago            #+#    #+#             */
-/*   Updated: 2023/12/06 12:50:09 by pdrago           ###   ########.fr       */
+/*   Updated: 2023/12/08 12:05:30 by pdrago           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,8 @@ typedef struct s_character
 {
 	unsigned int	movement_count;
 	unsigned int	collectibles_count;
+	unsigned int	kill_count;
+	int			dead;
 	t_image			down;
 	t_image			up;
 	t_image			right;
@@ -54,6 +56,7 @@ typedef struct s_character
 	t_image			down_door;
 	t_image			left_door;
 	t_image			right_door;
+	t_image			attacking;
 	t_coord			array_indexes;
 	t_coord			array_position;
 }	t_character;
@@ -86,5 +89,6 @@ typedef struct s_program
 	t_image		wall;
 	t_image		collectible;
 	t_image		victory;
+	t_image		enemy;
 }	t_program;
 #endif
