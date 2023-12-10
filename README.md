@@ -46,4 +46,4 @@ I'm a programmer, not an artist, so all the pixel art you see in the game was ma
     - [Sprites Pack](https://pixel-boy.itch.io/ninja-adventure-asset-pack)
 - Font:
     - Artist: [ImpossibleRealms](https://opengameart.org/users/impossiblerealms)
-    - [Sprites] (https://opengameart.org/content/8x8-font-chomps-wacky-worlds-beta)
+    - [Sprites](https://opengameart.org/content/8x8-font-chomps-wacky-worlds-beta)
