@@ -6,7 +6,7 @@
 /*   By: pdrago <pdrago@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 22:56:44 by pdrago            #+#    #+#             */
-/*   Updated: 2023/12/08 16:42:44 by pdrago           ###   ########.fr       */
+/*   Updated: 2023/12/09 23:19:54 by pdrago           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,8 @@ void	resolve_letters(t_program *game, char object, t_coord pos)
 		doi(game->mlx, game->win, game->numbers.eight.img, pos);
 	else if (object == NINE)
 		doi(game->mlx, game->win, game->numbers.nine.img, pos);
+	else if (object == SLASH)
+		doi(game->mlx, game->win, game->numbers.slash.img, pos);
 }
 
 void	render_tile(t_program *game, char object, t_coord pos)

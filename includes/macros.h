@@ -6,7 +6,7 @@
 /*   By: pdrago <pdrago@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 23:42:07 by pdrago            #+#    #+#             */
-/*   Updated: 2023/12/08 16:32:14 by pdrago           ###   ########.fr       */
+/*   Updated: 2023/12/09 23:19:34 by pdrago           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,6 +103,9 @@
 # ifndef NINE_PATH
 #  define NINE_PATH "./textures/numbers/nine.xpm"
 # endif
+# ifndef SLASH_PATH
+#  define SLASH_PATH "./textures/numbers/slash.xpm"
+# endif
 
 enum e_map_symbols
 {
@@ -123,6 +126,8 @@ enum e_map_symbols
 	SEVEN = '7',
 	EIGHT = '8',
 	NINE = '9',
+	SLASH = '/',
+
 };
 
 enum e_errors

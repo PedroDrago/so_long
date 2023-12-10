@@ -6,7 +6,7 @@
 /*   By: pdrago <pdrago@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 23:42:49 by pdrago            #+#    #+#             */
-/*   Updated: 2023/12/08 16:59:37 by pdrago           ###   ########.fr       */
+/*   Updated: 2023/12/09 23:19:58 by pdrago           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,7 @@ typedef struct s_numbers
 	t_image	seven;
 	t_image	eight;
 	t_image	nine;
+	t_image	slash;
 }	t_numbers;
 
 typedef struct s_map

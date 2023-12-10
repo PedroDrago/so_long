@@ -6,7 +6,7 @@
 /*   By: pdrago <pdrago@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 22:57:26 by pdrago            #+#    #+#             */
-/*   Updated: 2023/12/08 16:44:48 by pdrago           ###   ########.fr       */
+/*   Updated: 2023/12/09 23:20:11 by pdrago           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,7 @@ void	destroy_images(t_program *game)
 	mlx_destroy_image(game->mlx, game->numbers.seven.img);
 	mlx_destroy_image(game->mlx, game->numbers.eight.img);
 	mlx_destroy_image(game->mlx, game->numbers.nine.img);
+	mlx_destroy_image(game->mlx, game->numbers.slash.img);
 }
 
 void	exit_game_esc(t_program *game, int status)

@@ -6,7 +6,7 @@
 /*   By: pdrago <pdrago@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 22:56:26 by pdrago            #+#    #+#             */
-/*   Updated: 2023/12/08 16:54:05 by pdrago           ###   ########.fr       */
+/*   Updated: 2023/12/09 23:20:21 by pdrago           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,7 @@ void	set_numbers(t_program *game)
 	game->numbers.seven = new_sprite(game, SEVEN_PATH);
 	game->numbers.eight = new_sprite(game, EIGHT_PATH);
 	game->numbers.nine = new_sprite(game, NINE_PATH);
+	game->numbers.slash = new_sprite(game, SLASH_PATH);
 }
 
 void	set_exit(t_program *game)
