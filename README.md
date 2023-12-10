@@ -38,12 +38,12 @@ In 42 projects, it is not acceptable to have any kind of memory leak, and in thi
 
 I'm a programmer, not an artist, so all the pixel art you see in the game was made by other people who gently provided free assets for anyone who would like to download it. Here are the artists who made the art pieces that I used:
 - frog character sprites
-    - Artist: [PixelFrogStudio](https://twitter.com/PixelFrogStudio)
+    - [PixelFrogStudio](https://twitter.com/PixelFrogStudio)
     - [Sprites Pack](https://pixelfrog-assets.itch.io/pixel-adventure-1)
 - Sushi, Wall, Grass and Door
-    - Artists: [Pixel Boy](https://twitter.com/2Pblog1) and [AAA](https://www.instagram.com/challenger.aaa/?hl=fr)
+    - [Pixel Boy](https://twitter.com/2Pblog1) and [AAA](https://www.instagram.com/challenger.aaa/?hl=fr)
     - [Patreon](https://www.patreon.com/pixelarchipel)
     - [Sprites Pack](https://pixel-boy.itch.io/ninja-adventure-asset-pack)
 - Font:
-    - Artist: [ImpossibleRealms](https://opengameart.org/users/impossiblerealms)
+    - [ImpossibleRealms](https://opengameart.org/users/impossiblerealms)
     - [Sprites](https://opengameart.org/content/8x8-font-chomps-wacky-worlds-beta)
