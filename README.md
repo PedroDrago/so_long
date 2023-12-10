@@ -37,7 +37,7 @@ In 42 projects, it is not acceptable to have any kind of memory leak, and in thi
 <h3 align="center">Art Sources</h3>
 
 I'm a programmer, not an artist, so all the pixel art you see in the game was made by other people who gently provided free assets for anyone who would like to download it. Here are the artists who made the art pieces that I used:
-- frog character sprites
+- Frog character sprites
     - [PixelFrogStudio](https://twitter.com/PixelFrogStudio)
     - [Sprites Pack](https://pixelfrog-assets.itch.io/pixel-adventure-1)
 - Sushi, Wall, Grass and Door
