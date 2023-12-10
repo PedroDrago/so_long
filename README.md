@@ -27,6 +27,8 @@ git clone https://github.com/PedroDrago/so_long.git && cd so_long && make
 ./play
 ```
 
+Or just download the executable in the [Releases](https://github.com/PedroDrago/so_long/releases)!
+
 ---
 <h3 align="center">Leaktester</h3>
 
