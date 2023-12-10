@@ -6,7 +6,7 @@
 /*   By: pdrago <pdrago@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 16:24:45 by pdrago            #+#    #+#             */
-/*   Updated: 2023/12/09 21:38:22 by pdrago           ###   ########.fr       */
+/*   Updated: 2023/12/09 21:45:52 by pdrago           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,4 +26,3 @@ int	is_exit(t_map *map, int x, int y)
 {
 	return (x == map->exit_position.x && y == map->exit_position.y);
 }
-
