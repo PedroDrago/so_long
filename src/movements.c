@@ -6,7 +6,7 @@
 /*   By: pdrago <pdrago@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 16:54:24 by pdrago            #+#    #+#             */
-/*   Updated: 2023/12/08 16:54:25 by pdrago           ###   ########.fr       */
+/*   Updated: 2023/12/09 21:36:43 by pdrago           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	move_up(t_map *map, t_character *player)
 
 	current_x = map->player_position.x;
 	current_y = map->player_position.y;
-	if (map->array[map->player_position.y - 1][map->player_position.x] != '1')
+	if (map->array[map->player_position.y - 1][map->player_position.x] != WALL)
 	{
 		if (map->array[current_y - 1][current_x] == COLLECTIBLE)
 			player->collectibles_count++;
@@ -46,7 +46,7 @@ void	move_left(t_map *map, t_character *player)
 
 	current_x = map->player_position.x;
 	current_y = map->player_position.y;
-	if (map->array[current_y][current_x - 1] != '1')
+	if (map->array[current_y][current_x - 1] != WALL)
 	{
 		if (map->array[current_y][current_x - 1] == COLLECTIBLE)
 			player->collectibles_count++;
@@ -73,7 +73,7 @@ void	move_down(t_map *map, t_character *player)
 
 	current_x = map->player_position.x;
 	current_y = map->player_position.y;
-	if (map->array[map->player_position.y + 1][map->player_position.x] != '1')
+	if (map->array[map->player_position.y + 1][map->player_position.x] != WALL)
 	{
 		if (map->array[current_y + 1][current_x] == COLLECTIBLE)
 			player->collectibles_count++;
@@ -100,7 +100,7 @@ void	move_right(t_map *map, t_character *player)
 
 	current_x = map->player_position.x;
 	current_y = map->player_position.y;
-	if (map->array[map->player_position.y][map->player_position.x + 1] != '1')
+	if (map->array[map->player_position.y][map->player_position.x + 1] != WALL)
 	{
 		if (is_collectible(map, current_x + 1, current_y))
 			player->collectibles_count++;
