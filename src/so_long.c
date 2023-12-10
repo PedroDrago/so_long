@@ -6,7 +6,7 @@
 /*   By: pdrago <pdrago@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 22:56:13 by pdrago            #+#    #+#             */
-/*   Updated: 2023/12/08 14:19:35 by pdrago           ###   ########.fr       */
+/*   Updated: 2023/12/09 23:40:09 by pdrago           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,8 @@ int	main(int argc, char *argv[])
 	game.win = mlx_new_window(game.mlx, game.map.array_size.x * TILE_SIZE,
 			game.map.array_size.y * TILE_SIZE, "So Long");
 	mlx_key_hook(game.win, key_hook, &game);
-	mlx_hook(game.win, DestroyNotify, StructureNotifyMask, exit_game, &game);
+	mlx_hook(game.win, DestroyNotify, StructureNotifyMask,
+		exit_game_cross, &game); //verify leaks from closing with cross, and won/loose message
 	set_sprites(&game);
 	mlx_loop(game.mlx);
 }

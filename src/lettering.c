@@ -6,7 +6,7 @@
 /*   By: pdrago <pdrago@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 16:43:47 by pdrago            #+#    #+#             */
-/*   Updated: 2023/12/09 23:20:43 by pdrago           ###   ########.fr       */
+/*   Updated: 2023/12/09 23:30:05 by pdrago           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,9 @@ void	set_movement_letters(t_map *map, char *number)
 
 void	set_collectible_letters(t_map *map, char *number)
 {
-	int	row;
-	int	column;
-	int	count;
+	int		row;
+	int		column;
+	int		str_index;
 	char	*max_colect;
 
 	column = 0;
@@ -51,11 +51,11 @@ void	set_collectible_letters(t_map *map, char *number)
 		column++;
 	}
 	map->array[row][column++] = SLASH;
-	while (map->array[row][column] && max_colect[count])
+	while (map->array[row][column] && max_colect[str_index])
 	{
-		map->array[row][column] = choose_char(max_colect[count]);
+		map->array[row][column] = choose_char(max_colect[str_index]);
 		column++;
-		count++;
+		str_index++;
 	}
 	free(max_colect);
 }

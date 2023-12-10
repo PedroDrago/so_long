@@ -6,7 +6,7 @@
 /*   By: pdrago <pdrago@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 12:15:31 by pdrago            #+#    #+#             */
-/*   Updated: 2023/12/08 16:43:16 by pdrago           ###   ########.fr       */
+/*   Updated: 2023/12/09 23:39:04 by pdrago           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,6 @@ void	attack(t_character *player, t_map *map)
 		player->current = player->attacking_door;
 	else
 		player->current = player->attacking_grass;
-	player->movement_count--;
 	resolve_attack(player, map);
+	do_letters(map, player);
 }

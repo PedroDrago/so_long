@@ -6,7 +6,7 @@
 /*   By: pdrago <pdrago@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 04:56:20 by pdrago            #+#    #+#             */
-/*   Updated: 2023/12/08 16:58:54 by pdrago           ###   ########.fr       */
+/*   Updated: 2023/12/09 23:42:29 by pdrago           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,13 @@
 # include "structs.h"
 # include "utils.h"
 
+//Returns the compatile macro to the character
 int		choose_char(char c);
+//check if given coordinate is of a collectible
 int		is_collectible(t_map *map, int x, int y);
+//check if given coordinate is of an enemy
 int		is_enemy(t_map *map, int x, int y);
+//check if given coordinate is of the exit
 int		is_exit(t_map *map, int x, int y);
 //finish the game executing, cleaning everything 
 int		exit_game(t_program *game, int status);
@@ -57,6 +61,8 @@ int		check_path(char *map_file);
 int		error_message(int error);
 //destroy map created in the program
 int		destroy_map(t_map *map);
+//Exit the game when cross is clicked
+int		exit_game_cross(t_program *game, int status);
 //generate a image object based on the image file
 t_image	new_sprite(t_program *vars, char *path);
 //generate a map object from the map file
@@ -92,16 +98,21 @@ void	set_sprites(t_program *game);
 void	render_tile(t_program *game, char object, t_coord pos);
 //render the current map to screen
 void	render_map(t_program *game);
+//Changes player current sprite to the attacking sprite
 void	attack(t_character *player, t_map *map);
+//Kills enemies based on the attack and increse kill count
 void	resolve_attack(t_character *player, t_map *map);
+//Choose which adjacent tile will have the enemy
 void	fill_with_enemies(t_map *map, int row, int column);
+//Fill map with enemies
 void	generate_enemies(t_map *map, int enemies_number);
-void	exit_game_esc(t_program *game, int status);
+//Set map variables
 void	set_map(t_map *map);
+//Writes movement counter into screen
 void	set_movement_letters(t_map *map, char *number);
+//Manage all letterring functions
 void	do_letters(t_map *map, t_character *player);
+//Writes collectibles counters into screen
 void	set_collectible_letters(t_map *map, char *number);
-void	do_letters(t_map *map, t_character *player);
 char	*ft_itoa(int n);
-
 #endif
