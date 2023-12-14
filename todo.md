@@ -1,4 +1,5 @@
 # To-do
+- [ ] Fix movement count. It counts even when walking into a wall.
 - [ ] Add a game menu.
     - [ ] Add the option to select between 3 map themes in the game menu.
         1. Frog and grass theme.
