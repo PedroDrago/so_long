@@ -3,7 +3,7 @@
 <p align="center">
     <img src="./textures/ascii.png"/>
 </p>
-<p align="center">This project is about writing a 2D Game in C.</p>
+<p align="center">This project is about developing a 2D Game in C.</p>
 
 ---
 <p align="center">
@@ -12,7 +12,7 @@
 
 
 <h3 align="center">About my Journey</h3>
-This was the first project in the 42 Curriculum that made me have tons of fun with it. In terms of days, this was a short journey, but just because I was dedicating 16+ hours per day to this little project, and I just did that because I was having a lot of fun discovering the implications and details about graphics programming, I wasn't able to do most of the features I was aiming for because I needed to keep progressing in my Common Core, but I promise that I will come back someday and make this game something really playable and fun, at least for me! If you are a 42 Cadet, treat this project with love, it will reward you with knowledge and fun.
+This was the first project in the 42 Curriculum that made me have tons of fun with it. This was a long journey just because I was really dedicated into making a nice little game and I had a lot of fun discovering the implications and details about 2D graphics programming. I wasn't able to develop most of the features I was aiming for because I needed to keep progressing in my Common Core, but I promise that I will come back someday and make this game something really playable and fun, at least for me! If you are a 42 Cadet, treat this project with love, it will reward you with knowledge and fun.
 
 ---
 <h3 align="center">How to play it (linux only)</h3>
