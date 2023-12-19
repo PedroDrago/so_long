@@ -6,7 +6,7 @@
 /*   By: pdrago <pdrago@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 16:54:24 by pdrago            #+#    #+#             */
-/*   Updated: 2023/12/09 21:36:43 by pdrago           ###   ########.fr       */
+/*   Updated: 2023/12/19 08:44:45 by pdrago           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ void	move_up(t_map *map, t_character *player)
 			player->current = player->up_door;
 		else
 			player->current = player->up;
+		player->movement_count++;
 		do_letters(map, player);
 	}
 }
@@ -62,6 +63,7 @@ void	move_left(t_map *map, t_character *player)
 			player->current = player->left_door;
 		else
 			player->current = player->left;
+		player->movement_count++;
 		do_letters(map, player);
 	}
 }
@@ -89,6 +91,7 @@ void	move_down(t_map *map, t_character *player)
 			player->current = player->down_door;
 		else
 			player->current = player->down;
+		player->movement_count++;
 		do_letters(map, player);
 	}
 }
@@ -116,6 +119,7 @@ void	move_right(t_map *map, t_character *player)
 			player->current = player->right_door;
 		else
 			player->current = player->right;
+		player->movement_count++;
 		do_letters(map, player);
 	}
 }

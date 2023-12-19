@@ -6,7 +6,7 @@
 /*   By: pdrago <pdrago@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 22:57:22 by pdrago            #+#    #+#             */
-/*   Updated: 2023/12/08 16:56:13 by pdrago           ###   ########.fr       */
+/*   Updated: 2023/12/19 08:44:53 by pdrago           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void	check_collectibles(t_program *game)
 void	print_player_status(t_program *game)
 {
 	ft_printf("movement count: %u\n",
-		game->character.movement_count += 1);
+		game->character.movement_count);
 	ft_printf("Collectible count: %u/%u\n",
 		game->character.collectibles_count, game->map.collectibles_number);
 	ft_printf("Kill count: %u\n", game->character.kill_count);
