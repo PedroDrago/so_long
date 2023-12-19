@@ -12,7 +12,7 @@
 
 
 <h3 align="center">About my Journey</h3>
-This was the first project in the 42 Curriculum that made me have tons of fun with it. This was a long journey just because I was really dedicated into making a nice little game and I had a lot of fun discovering the implications and details about 2D graphics programming. I wasn't able to develop most of the features I was aiming for because I needed to keep progressing in my Common Core, but I promise that I will come back someday and make this game something really playable and fun, at least for me! If you are a 42 Cadet, treat this project with love, it will reward you with knowledge and fun.
+This was the first project in the 42 Curriculum that made me have tons of fun with it. This was a long journey just because I was really dedicated into making a nice little game (and I had a lot of fun discovering the implications and details about 2D graphics programming). I wasn't able to develop most of the features I was aiming for because I needed to keep progressing in my Common Core, but I promise that I will come back someday and make this game something really playable and fun, at least for me! If you are a 42 Cadet, treat this project with love, it will reward you with knowledge and fun.
 
 ---
 <h3 align="center">How to play it (linux only)</h3>
